@@ -3,32 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infolink | Home</title>
     
-    <title>Infolink | Premier Publishing, Events & Business Management in Tanzania</title>
-    <meta name="description" content="Infolink is Tanzania's leading partner in Publishing, Event Management, and Business Solutions. Publishers of NGO Beacon, Kariakoo Directory, and IJUE GARI YAKO.">
-    <meta name="keywords" content="Infolink Tanzania, NGO Beacon, Event Management Dar es Salaam, Publishing Company, Kariakoo Directory, Business Management, Tanzania Marketing">
-    <meta name="author" content="Infolink LTD">
-
-    <!-- SEO -->
-    <meta name="robots" content="index, follow">
-    <meta property="og:title" content="Infolink | Premier Publishing, Events & Business Management in Tanzania">
-    <meta property="og:description" content="Infolink is Tanzania's leading partner in Publishing, Event Management, and Business Solutions. Publishers of NGO Beacon, Kariakoo Directory, and IJUE GARI YAKO.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://www.infolinktanzania.com">
-    <meta property="og:image" content="https://github.com/Engineer0099/infolink.git/infolink_logo.jpeg">
-    
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Infolink | Premier Publishing, Events & Business Management in Tanzania">
-    <meta name="twitter:description" content="Infolink is Tanzania's leading partner in Publishing, Event Management, and Business Solutions. Publishers of NGO Beacon, Kariakoo Directory, and IJUE GARI YAKO.">
-    <meta name="twitter:image" content="https://infolink-blush.vercel.app/infolink_logo.jpeg">
-    <!-- End SEO -->
-
-    <!--Favicon-->
-    <link rel="icon" type="image/png" href="infolink_logo.jpeg">
     <script src="https://cdn.tailwindcss.com"></script>
-    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400&family=Montserrat:wght@500;600;700;800&family=Open+Sans:wght@300;400;600&family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet">
 
     <script>
         tailwind.config = {
@@ -37,73 +16,25 @@
                     colors: {
                         brandBlue: '#0e2a5c',
                         brandOrange: '#f58025',
-                        brandGray: '#f8fafc',
+                        brandWhite: '#ffffff',
                     },
                     fontFamily: {
-                        sans: ['Poppins', 'sans-serif'],
+                        // 1. Titles / Cover Headings: Montserrat / Poppins (Bold/Extra Bold) [cite: 2, 4, 5]
+                        title: ['Poppins', 'sans-serif'], 
+                        // 2. Headers: Montserrat (Semi-Bold/Medium) [cite: 10, 11, 12]
+                        header: ['Montserrat', 'sans-serif'],
+                        // 3. Normal Text: Open Sans / Lato (Regular/Light) [cite: 17, 18, 19]
+                        body: ['Open Sans', 'sans-serif'], 
+                        // 4. Buttons: Montserrat / Poppins (Medium/Semi-Bold) [cite: 25, 26]
+                        btn: ['Montserrat', 'sans-serif'],
                     },
                     animation: {
-                        'scroll': 'scroll 30s linear infinite',
                         'float': 'float 6s ease-in-out infinite',
-                        'pulse-glow': 'pulse-glow 2s ease-in-out infinite',
-                        'slide-in': 'slide-in 0.5s ease-out',
-                        'carousel-3d': 'carousel-3d 30s linear infinite',
-                        'fade-up': 'fade-up 0.8s ease-out forwards',
-                        'fade-in': 'fade-in 1s ease-out forwards',
-                        'continuous-fade': 'continuous-fade 2s ease-in-out infinite',
-                        'book-float': 'book-float 8s ease-in-out infinite',
-                        'slow-spin': 'slow-spin 20s linear infinite',
-                        'book-entrance': 'book-entrance 1.2s ease-out forwards',
-                        'slide-down-bounce': 'slide-down-bounce 1.5s cubic-bezier(0.25, 1, 0.5, 1) forwards',
                     },
                     keyframes: {
-                        scroll: {
-                            '0%': { transform: 'translateX(0)' },
-                            '100%': { transform: 'translateX(-50%)' },
-                        },
-                        float: {
+                        float: { 
                             '0%, 100%': { transform: 'translateY(0) rotate(0deg)' },
                             '50%': { transform: 'translateY(-20px) rotate(2deg)' },
-                        },
-                        'pulse-glow': {
-                            '0%, 100%': { opacity: 1 },
-                            '50%': { opacity: 0.7, boxShadow: '0 0 20px rgba(245, 128, 37, 0.5)' },
-                        },
-                        'slide-in': {
-                            '0%': { transform: 'translateY(30px)', opacity: 0 },
-                            '100%': { transform: 'translateY(0)', opacity: 1 },
-                        },
-                        'carousel-3d': {
-                            '0%': { transform: 'rotateY(0deg)' },
-                            '100%': { transform: 'rotateY(360deg)' },
-                        },
-                        'fade-up': {
-                            '0%': { transform: 'translateY(40px)', opacity: 0 },
-                            '100%': { transform: 'translateY(0)', opacity: 1 },
-                        },
-                        'fade-in': {
-                            '0%': { opacity: 0 },
-                            '100%': { opacity: 1 },
-                        },
-                        'continuous-fade': {
-                            '0%, 100%': { opacity: 0.5, transform: 'translateY(10px)' },
-                            '50%': { opacity: 1, transform: 'translateY(0)' },
-                        },
-                        'book-float': {
-                            '0%, 100%': { transform: 'translateY(0px) rotate(-5deg) scale(1)' },
-                            '25%': { transform: 'translateY(-25px) rotate(0deg) scale(1.05)' },
-                            '50%': { transform: 'translateY(-40px) rotate(5deg) scale(1.1)' },
-                            '75%': { transform: 'translateY(-15px) rotate(2deg) scale(1.05)' },
-                        },
-                        'slow-spin': {
-                            '0%': { transform: 'rotateY(0deg)' },
-                            '100%': { transform: 'rotateY(360deg)' },
-                        },
-                        'slide-down-bounce': {
-                            '0%': { transform: 'translateY(-100vh) rotateY(180deg)', opacity: 0 },
-                            '60%': { transform: 'translateY(30px) rotateY(-40deg)', opacity: 1 },
-                            '80%': { transform: 'translateY(-10px) rotateY(-30deg)' },
-                            '100%': { transform: 'translateY(0) rotateY(-30deg)', opacity: 1 },
                         }
                     }
                 }
@@ -114,1469 +45,400 @@
     <style>
         html { scroll-behavior: smooth; }
         
-        .no-scrollbar::-webkit-scrollbar { display: none; }
-        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
-
-        .btn-hover {
-            transition: all 0.3s ease;
-        }
-        .btn-hover:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 15px 30px rgba(245, 128, 37, 0.3);
-        }
-
-        .img-hover {
-            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        .img-hover:hover {
-            transform: scale(1.08);
-            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.25);
-        }
-
-        .gradient-text {
-            background: linear-gradient(45deg, #f58025, #ffb347, #f58025);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            background-size: 200% auto;
-            animation: gradient 3s ease-in-out infinite;
-        }
-
-        @keyframes gradient {
-            0%, 100% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-        }
-
-        /* 3D REALISTIC BOOK STYLES */
-        .book-container-3d {
-            position: absolute;
-            right: 10%;
-            top: 25%;
+        /* 3D BOOK STYLES */
+        .perspective-container {
             perspective: 1000px;
-            z-index: 20;
-            display: none;
-            animation: slide-down-bounce 1.5s cubic-bezier(0.25, 1, 0.5, 1) forwards;
-        }
-
-        @media (min-width: 1024px) {
-            .book-container-3d { display: block; }
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .book-3d {
             width: 280px;
-            height: 380px;
+            height: 390px;
             position: relative;
             transform-style: preserve-3d;
             transform: rotateY(-30deg) rotateX(10deg);
             transition: transform 0.5s ease;
-            cursor: pointer;
-            box-shadow: 30px 30px 50px rgba(0,0,0,0.4);
+            box-shadow: 25px 25px 50px rgba(0,0,0,0.5);
         }
 
         .book-3d:hover {
             transform: rotateY(-15deg) rotateX(5deg) translateY(-10px);
-            box-shadow: 40px 40px 80px rgba(0,0,0,0.5);
         }
 
-        .book-cover-front {
+        .book-cover {
             position: absolute;
             width: 100%;
             height: 100%;
-            background-color: #0e2a5c;
-            border-radius: 4px 12px 12px 4px;
+            border-radius: 2px 4px 4px 2px;
             transform: translateZ(25px);
             overflow: hidden;
-            background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 100%);
+            background-color: #0e2a5c;
         }
 
+        /* Spine uses brand colors only */
         .book-spine {
             position: absolute;
             width: 50px;
             height: 100%;
-            background: linear-gradient(90deg, #d36a1e, #f58025, #d36a1e);
+            background-color: #f58025; /* Brand Orange */
             transform: rotateY(-90deg) translateZ(25px);
-            border-radius: 4px 0 0 4px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            border-radius: 2px 0 0 2px;
         }
 
         .book-pages {
             position: absolute;
             width: 260px;
-            height: 360px;
-            background: repeating-linear-gradient(90deg, #fff 0px, #f4f4f4 2px, #fff 4px);
+            height: 370px;
+            background: #fff;
             transform: rotateY(0deg) translateZ(10px) translateX(15px) translateY(10px);
             box-shadow: inset 5px 0 10px rgba(0,0,0,0.1);
         }
 
-        /* 3D CAROUSEL STYLES */
-        .carousel-3d-container {
-            perspective: 1200px;
-            transform-style: preserve-3d;
-            height: 600px;
-            width: 100%;
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+        /* 3D HANDS STYLE - Modified for image */
+        .hands-container {
             position: relative;
-        }
-        
-        .carousel-3d-item {
-            position: absolute;
-            transform-origin: center center;
-            transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            filter: blur(0);
             width: 100%;
-            height: 100%;
-        }
-
-        .carousel-3d-card {
-            width: 300px;
-            height: 450px;
-            background: white;
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
-            transform-style: preserve-3d;
-            transition: transform 0.3s ease;
-        }
-
-        .carousel-3d-card:hover {
-            transform: translateY(-10px);
-        }
-
-        .carousel-3d-btn {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            z-index: 100;
-            background: rgba(255, 255, 255, 0.2);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255,255,255,0.4);
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-        
-        .carousel-3d-btn:hover {
-            background: #f58025;
-            border-color: #f58025;
-            transform: translateY(-50%) scale(1.1);
-        }
-
-        .whatsapp-float {
-            animation: float 4s ease-in-out infinite;
-            box-shadow: 0 10px 25px rgba(37, 211, 102, 0.3);
-        }
-
-        .text-shadow {
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
-        }
-
-        .border-glow {
-            border: 2px solid transparent;
-            background: linear-gradient(white, white) padding-box,
-                        linear-gradient(45deg, #f58025, #0e2a5c) border-box;
-        }
-
-        /* Publications Section Fix */
-        .publications-section {
-            min-height: 100vh;
             display: flex;
-            flex-direction: column;
             justify-content: center;
-            position: relative;
-            overflow: hidden;
+            align-items: center;
+            animation: float 6s ease-in-out infinite;
         }
         
-        .publications-background {
+        .hand-image {
+            width: 200px;
+            height: auto;
+            filter: drop-shadow(0 20px 30px rgba(0,0,0,0.5));
+        }
+
+        /* Slide Transitions */
+        .slide-content {
+            transition: opacity 0.8s ease-in-out, transform 0.8s ease-in-out;
             position: absolute;
+            width: 100%;
             top: 0;
             left: 0;
-            width: 100%;
             height: 100%;
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            transition: opacity 1s ease-in-out;
+            display: flex;
+            flex-col: column;
+            justify-content: center;
+        }
+        
+        .slide-hidden {
+            opacity: 0;
+            transform: translateY(30px);
+            pointer-events: none;
             z-index: 0;
         }
         
-        .publications-pattern {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            opacity: 0.15;
-            z-index: 1;
-        }
-        
-        .publications-content {
-            position: relative;
+        .slide-active {
+            opacity: 1;
+            transform: translateY(0);
             z-index: 10;
         }
 
-        /* Continuous scroll animation */
-        .scroll-element {
-            opacity: 0;
-            transform: translateY(40px);
-            transition: all 0.8s ease-out;
+        /* Custom spacing to push content down */
+        .hero-spacer {
+            margin-top: 120px; /* Ensures header doesn't hide content */
         }
-        
-        .scroll-element.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        
-        .scroll-element.continuous {
-            animation: continuous-fade 2s ease-in-out infinite;
+
+        /* Mobile Menu Animation */
+        .mobile-menu {
+            transition: all 0.3s ease-in-out;
         }
     </style>
 </head>
-<body class="font-sans text-gray-800 antialiased bg-white">
+<body class="bg-brandBlue">
 
-    <a href="YOUR_WHATSAPP_LINK_HERE" target="_blank" class="fixed bottom-6 right-6 z-50 whatsapp-float bg-green-500 text-white w-14 h-14 rounded-full flex items-center justify-center hover:bg-green-600 transition-all duration-300 shadow-2xl">
-        <i class="fab fa-whatsapp text-2xl"></i>
-    </a>
-
-    <!-- 3D Realistic Book (Desktop Only) - REPLACED -->
-    <div class="book-container-3d">
-        <div class="book-3d" onclick="document.getElementById('publications').scrollIntoView({behavior: 'smooth'})">
-            <div class="book-spine">
-                <span class="text-white/90 font-bold tracking-[0.2em] text-xs -rotate-90 whitespace-nowrap">DIRECTORY 2026</span>
-            </div>
-            <div class="book-pages"></div>
-            <div class="book-cover-front flex items-center justify-center bg-brandBlue border-r border-white/10 overflow-hidden">
-                <!-- Replace with your actual directory cover image -->
-                <img src="images/ijue gari yako 2.png" alt="Directory Cover" class="w-full h-full object-cover">
-                <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
-                <div class="absolute bottom-4 left-0 right-0 text-center">
-                    <a href="INSERT_PDF_LINK_HERE" target="_blank" 
-                       class="inline-block px-6 py-2 bg-brandOrange text-white font-bold rounded-lg hover:bg-orange-600 transition-all transform hover:scale-105 shadow-lg">
-                        Read More
-                    </a>
-                </div>
-                <div class="absolute top-6 -right-8 bg-brandOrange text-white text-xs font-bold py-1 px-10 rotate-45 shadow-lg">NEW</div>
-            </div>
-        </div>
-    </div>
-
-    <div id="adModal" class="fixed inset-0 bg-black/70 z-50 hidden items-center justify-center p-4">
-        <div class="bg-white rounded-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto animate-slide-in">
-            <div class="p-8">
-                <div class="flex justify-between items-center mb-6">
-                    <h3 class="text-2xl font-bold text-brandBlue">✨ Amplify Your Business Reach</h3>
-                    <button onclick="closeAdModal()" class="text-gray-500 hover:text-brandOrange text-2xl">
-                        <i class="fas fa-times"></i>
-                    </button>
-                </div>
-                
-                <div class="space-y-6">
-                    <div class="bg-gradient-to-r from-brandOrange/10 to-brandBlue/10 p-6 rounded-xl">
-                        <h4 class="text-xl font-bold text-brandBlue mb-3">📈 Why Advertise With Our Directories?</h4>
-                        <ul class="space-y-2 text-gray-700">
-                            <li class="flex items-start gap-2"><i class="fas fa-check-circle text-brandOrange mt-1"></i> <span><strong>Targeted Audience:</strong> Reach your exact customer demographic</span></li>
-                            <li class="flex items-start gap-2"><i class="fas fa-check-circle text-brandOrange mt-1"></i> <span><strong>High Engagement:</strong> Our directories are actively used and referenced</span></li>
-                            <li class="flex items-start gap-2"><i class="fas fa-check-circle text-brandOrange mt-1"></i> <span><strong>Year-Long Visibility:</strong> Your ad works for you 365 days a year</span></li>
-                            <li class="flex items-start gap-2"><i class="fas fa-check-circle text-brandOrange mt-1"></i> <span><strong>Credibility Boost:</strong> Association with trusted publications</span></li>
-                            <li class="flex items-start gap-2"><i class="fas fa-check-circle text-brandOrange mt-1"></i> <span><strong>Multi-Platform Exposure:</strong> Print + Digital distribution</span></li>
-                        </ul>
-                    </div>
-
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <div class="border-2 border-brandOrange/30 rounded-xl p-6 text-center hover:border-brandOrange transition">
-                            <div class="text-3xl font-bold text-brandOrange mb-2">TZS 500,000</div>
-                            <div class="text-sm text-gray-500 mb-4">Per Edition</div>
-                            <h5 class="font-bold text-brandBlue mb-3">Half Page Advertisement</h5>
-                            <ul class="text-sm text-gray-600 space-y-1 mb-4">
-                                <li>Premium placement</li>
-                                <li>Full-color design</li>
-                                <li>Business profile</li>
-                                <li>Contact details</li>
-                            </ul>
-                            <button onclick="bookAdSpace('half')" class="w-full py-3 bg-brandOrange text-white font-bold rounded-lg hover:bg-orange-600 transition">
-                                Book Half Page
-                            </button>
-                        </div>
-
-                        <div class="border-2 border-brandBlue/30 rounded-xl p-6 text-center hover:border-brandBlue transition bg-gradient-to-br from-brandBlue/5 to-white">
-                            <div class="text-3xl font-bold text-brandBlue mb-2">TZS 1,000,000</div>
-                            <div class="text-sm text-gray-500 mb-4">Per Edition</div>
-                            <h5 class="font-bold text-brandBlue mb-3">Full Page Advertisement</h5>
-                            <ul class="text-sm text-gray-600 space-y-1 mb-4">
-                                <li>Front/Back cover options</li>
-                                <li>Custom design service</li>
-                                <li>Featured business story</li>
-                                <li>Priority placement</li>
-                                <li>Digital banner inclusion</li>
-                            </ul>
-                            <button onclick="bookAdSpace('full')" class="w-full py-3 bg-brandBlue text-white font-bold rounded-lg hover:bg-blue-900 transition">
-                                Book Full Page
-                            </button>
-                        </div>
-                    </div>
-
-                    <div class="text-center pt-4">
-                        <p class="text-gray-600 mb-4">Limited spaces available! Book now to secure your spot</p>
-                        <button onclick="scrollToContact()" class="px-8 py-3 bg-gradient-to-r from-brandOrange to-orange-600 text-white font-bold rounded-lg hover:from-orange-600 hover:to-brandOrange transition btn-hover">
-                            <i class="fas fa-calendar-check mr-2"></i>Book Your Advertising Space Today
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <nav class="fixed w-full z-40 bg-white/95 backdrop-blur-md shadow-lg transition-all duration-300 border-b border-gray-100">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between h-20 items-center">
+    <nav class="fixed w-full z-50 bg-brandBlue shadow-xl h-24 flex items-center">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+            <div class="flex justify-between items-center">
                 <a href="#" class="flex-shrink-0 flex items-center group">
-                    <img src="images/logo-removebg-preview.png" alt="Infolink Logo" class="h-23 w-40 group-hover:opacity-90 transition img-hover">
+                    <img src="images/logo.png" class="h-23 w-40" style="filter: drop-shadow(0px 2px 4px rgba(0,0,0,0.2));">
                 </a>
                 
-                <div class="hidden lg:flex space-x-8 items-center text-sm font-semibold uppercase tracking-wide">
-                    <a href="#home" class="text-brandBlue hover:text-brandOrange transition border-b-2 border-transparent hover:border-brandOrange pb-1">Home</a>
-                    <a href="#about" class="text-gray-600 hover:text-brandOrange transition border-b-2 border-transparent hover:border-brandOrange pb-1">About Us</a>
-                    <a href="#team" class="text-gray-600 hover:text-brandOrange transition border-b-2 border-transparent hover:border-brandOrange pb-1">Our Team</a>
-                    <a href="#services" class="text-gray-600 hover:text-brandOrange transition border-b-2 border-transparent hover:border-brandOrange pb-1">Services</a>
-                    <a href="#publications" class="text-gray-600 hover:text-brandOrange transition border-b-2 border-transparent hover:border-brandOrange pb-1">Publications</a>
-                    <a href="#events" class="text-gray-600 hover:text-brandOrange transition border-b-2 border-transparent hover:border-brandOrange pb-1">Events</a>
-                    <a href="#contact" class="ml-4 px-8 py-3 bg-brandBlue text-white rounded-full hover:bg-brandOrange transition-all duration-300 shadow-lg btn-hover font-bold">
-                        Get In Touch <i class="fas fa-arrow-right ml-2"></i>
+                <div class="hidden lg:flex space-x-10 items-center">
+                    <a href="index.html" class="text-white font-bold border-b-2 border-brandOrange pb-1 button-font">Home</a>
+                    <a href="About us.html" class="text-white/80 hover:text-brandOrange transition border-b-2 border-transparent hover:border-brandOrange pb-1 button-font">About Us</a>
+                    <a href="team.html" class="text-white/80 hover:text-brandOrange transition border-b-2 border-transparent hover:border-brandOrange pb-1 button-font">Our Team</a>
+                    <a href="service.html" class="text-white/80 hover:text-brandOrange transition border-b-2 border-transparent hover:border-brandOrange pb-1 button-font">Services</a>
+                    <a href="flagship publication.html" class="text-white hover:text-brandOrange font-btn font-semibold text-sm tracking-wide transition duration-300 uppercase">PUBLICATIONS</a>     
+                    <a href="contact.html" class="px-8 py-3 bg-brandOrange text-white rounded-full hover:bg-white hover:text-brandOrange transition-all duration-300 shadow-md font-btn font-bold text-sm uppercase">
+                        GET IN TOUCH
                     </a>
                 </div>
 
                 <div class="lg:hidden flex items-center">
-                    <button id="mobile-menu-btn" class="text-brandBlue text-2xl focus:outline-none p-2">
+                    <button id="mobile-menu-button" class="text-white text-2xl focus:outline-none p-2 hover:text-brandOrange transition">
                         <i class="fas fa-bars"></i>
                     </button>
                 </div>
             </div>
-        </div>
-        
-        <div id="mobile-menu" class="hidden lg:hidden bg-white border-t border-gray-100 shadow-xl">
-            <div class="px-4 pt-2 pb-6 space-y-1">
-                <a href="#home" class="block px-3 py-3 text-brandBlue font-bold border-l-4 border-brandOrange bg-brandOrange/5">Home</a>
-                <a href="#about" class="block px-3 py-3 text-gray-600 hover:text-brandOrange hover:bg-gray-50">About Us</a>
-                <a href="#team" class="block px-3 py-3 text-gray-600 hover:text-brandOrange hover:bg-gray-50">Our Team</a>
-                <a href="#services" class="block px-3 py-3 text-gray-600 hover:text-brandOrange hover:bg-gray-50">Our Services</a>
-                <a href="#publications" class="block px-3 py-3 text-gray-600 hover:text-brandOrange hover:bg-gray-50">Publications</a>
-                <a href="#events" class="block px-3 py-3 text-gray-600 hover:text-brandOrange hover:bg-gray-50">Events</a>
-                <a href="#contact" class="block px-3 py-3 bg-brandBlue text-white font-bold rounded-lg mx-2 text-center">Get In Touch</a>
+
+            <!-- Mobile Menu (Hidden by default) -->
+            <div id="mobile-menu" class="mobile-menu lg:hidden hidden absolute top-24 left-0 w-full bg-brandBlue shadow-lg z-40">
+                <div class="flex flex-col items-center py-4">
+                    <a href="index.html" class="text-white hover:text-brandOrange font-btn font-semibold text-sm tracking-wide transition duration-300 py-3 uppercase">HOME</a>
+                    <a href="About us.html" class="text-white hover:text-brandOrange font-btn font-semibold text-sm tracking-wide transition duration-300 py-3 uppercase">ABOUT US</a>
+                    <a href="team.html" class="text-white hover:text-brandOrange font-btn font-semibold text-sm tracking-wide transition duration-300 py-3 uppercase">OUR TEAM</a>
+                    <a href="service.html" class="text-white hover:text-brandOrange font-btn font-semibold text-sm tracking-wide transition duration-300 py-3 uppercase">SERVICES</a>
+                    <a href="events.html" class="text-white hover:text-brandOrange font-btn font-semibold text-sm tracking-wide transition duration-300 py-3 uppercase">EVENTS</a>
+                    <a href="flagship publication.html" class="text-white hover:text-brandOrange font-btn font-semibold text-sm tracking-wide transition duration-300 py-3 uppercase">PUBLICATIONS</a>
+                    <a href="contact.html" class="mt-4 px-8 py-3 bg-brandOrange text-white rounded-full hover:bg-white hover:text-brandOrange transition-all duration-300 shadow-md font-btn font-bold text-sm uppercase">GET IN TOUCH</a>
+                </div>
             </div>
         </div>
     </nav>
 
-    <section id="home" class="relative pt-32 pb-20 lg:pt-48 lg:pb-36 overflow-hidden bg-brandBlue scroll-element">
-        <div class="absolute inset-0 z-0">
-            <div class="absolute inset-0 bg-gradient-to-r from-brandBlue via-brandBlue/90 to-brandBlue/70"></div>
-            <div class="absolute right-0 top-0 w-1/3 h-full bg-gradient-to-l from-brandOrange/20 to-transparent"></div>
-        </div>
-
-        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="lg:w-2/3">
-                <div class="inline-flex items-center gap-3 px-4 py-2 mb-8 border border-brandOrange/50 rounded-full bg-brandOrange/10 backdrop-blur-sm">
-                    <span class="w-3 h-3 rounded-full bg-brandOrange animate-pulse-glow"></span>
-                    <span class="text-brandOrange font-bold text-sm tracking-widest uppercase">INFOLINK COMPANY</span>
-                </div>
-                
-                <h1 class="text-5xl lg:text-7xl font-black text-white leading-tight mb-6 text-shadow">
-                    Linking Information. <br>
-                    <span class="gradient-text">Creating Opportunities.</span>
-                </h1>
-                
-                <p class="text-xl text-gray-200 mb-10 max-w-2xl leading-relaxed">
-                    We connect people, organizations, and opportunities across East Africa through premium publishing, professional events, and strategic business management.
-                </p>
-
-                <div class="flex flex-col sm:flex-row gap-6">
-                    <a href="#services" class="btn-hover px-10 py-5 bg-brandOrange text-white text-lg font-black rounded-xl shadow-2xl text-center flex items-center justify-center gap-3">
-                        <i class="fas fa-rocket text-xl"></i>
-                        Explore Our Services
-                    </a>
-                    <a href="#contact" class="px-10 py-5 border-2 border-white text-white text-lg font-black rounded-xl hover:bg-white hover:text-brandBlue transition-all duration-300 text-center flex items-center justify-center gap-3">
-                        <i class="fas fa-handshake text-xl"></i>
-                        Start a Project
-                    </a>
-                </div>
-            </div>
-        </div>
-
-        <div class="absolute bottom-0 left-0 w-full overflow-hidden">
-            <div class="flex animate-scroll">
-                <div class="flex space-x-8 py-6">
-                    <span class="text-white/10 text-4xl font-bold">• PUBLISHING • MARKETING • EVENTS • MANAGEMENT •</span>
-                    <span class="text-white/10 text-4xl font-bold">• PUBLISHING • MARKETING • EVENTS • MANAGEMENT •</span>
-                    <span class="text-white/10 text-4xl font-bold">• PUBLISHING • MARKETING • EVENTS • MANAGEMENT •</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="about" class="py-24 bg-gradient-to-b from-white to-brandGray">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="home" class="relative min-h-screen bg-brandBlue flex flex-col justify-center overflow-hidden">
+        
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full hero-spacer mb-20">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-                <div class="relative h-[550px] w-full rounded-3xl overflow-hidden shadow-2xl group scroll-element">
-                    <div class="absolute inset-0 bg-gradient-to-tr from-brandBlue/90 via-brandBlue/70 to-brandOrange/30 z-10 mix-blend-multiply pointer-events-none"></div>
-                    <img src="images/about us.png" alt="Infolink Team" class="w-full h-full object-cover">
-                </div>
-
-                <div class="scroll-element">
-                    <div class="inline-block px-4 py-2 bg-brandOrange/10 rounded-full mb-6">
-                        <span class="text-brandOrange font-bold tracking-widest uppercase text-sm">About Us</span>
-                    </div>
-                    <h2 class="text-5xl font-black text-brandBlue mb-8">Who We Are</h2>
-                    <p class="text-gray-700 text-lg mb-8 leading-relaxed">
-                        Infolink is a dynamic communication and publishing company dedicated to linking information across communities and creating platforms that connect people, organizations, and opportunities throughout Tanzania and East Africa.
-                    </p>
-
-                    <div class="space-y-6 mb-10">
-                        <div class="flex gap-6 p-6 bg-white rounded-2xl shadow-lg border-l-4 border-brandOrange">
-                            <div class="flex-shrink-0"><i class="fas fa-bullseye text-3xl text-brandOrange"></i></div>
-                            <div>
-                                <h4 class="font-black text-xl text-brandBlue mb-2">Our Mission</h4>
-                                <p class="text-gray-600">To link information, empower communities, and create platforms that connect people, organizations, and opportunities across East Africa.</p>
-                            </div>
-                        </div>
-                        
-                        <div class="flex gap-6 p-6 bg-white rounded-2xl shadow-lg border-l-4 border-brandBlue">
-                            <div class="flex-shrink-0"><i class="fas fa-eye text-3xl text-brandBlue"></i></div>
-                            <div>
-                                <h4 class="font-black text-xl text-brandBlue mb-2">Our Vision</h4>
-                                <p class="text-gray-600">To become East Africa's leading partner in publishing, marketing, events, and business management.</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="bg-gradient-to-r from-brandBlue to-blue-900 rounded-2xl p-8 shadow-xl">
-                        <h4 class="text-2xl font-bold text-white mb-4">Ready to Partner With Us?</h4>
-                        <p class="text-white/90 mb-6">Join our network of successful organizations and amplify your impact</p>
-                        <a href="#contact" class="inline-flex items-center px-8 py-4 bg-white text-brandBlue font-black rounded-xl hover:bg-brandGray transition-all duration-300 btn-hover">
-                            Start Partnership <i class="fas fa-arrow-right ml-3"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="team" class="py-24 bg-gradient-to-br from-white via-brandGray to-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16 scroll-element">
-                <div class="inline-block px-4 py-2 bg-brandOrange/10 rounded-full mb-4">
-                    <span class="text-brandOrange font-bold tracking-widest uppercase text-sm">Leadership</span>
-                </div>
-                <h2 class="text-4xl font-black text-brandBlue mb-6">Meet Our Leadership Team</h2>
-                <p class="text-gray-600 max-w-2xl mx-auto">Experienced professionals driving innovation and excellence across East Africa</p>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
-                <div class="bg-white rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-500 p-6 text-center group card-3d scroll-element">
-                    <div class="w-40 h-40 mx-auto mb-6 rounded-full overflow-hidden bg-gradient-to-br from-brandBlue to-brandOrange p-1 shadow-lg">
-                        <div class="w-full h-full rounded-full bg-white p-1">
-                            <img src="INSERT_LEADER_IMAGE_LINK_HERE" alt="Abdil-ikhlas A. Rutungo" class="w-full h-full object-cover rounded-full">
-                        </div>
-                    </div>
-                    <h4 class="text-xl font-black text-brandBlue">Abdil-ikhlas A. Rutungo</h4>
-                    <span class="text-brandOrange font-bold uppercase block mb-4 text-sm">Founder & Visionary</span>
-                    <p class="text-gray-600 leading-relaxed mb-6" style="font-size: 0.95rem; line-height: 1.6;">
-                        Drives company vision, innovation, and strategic partnerships across East Africa. Oversees long-term growth and market expansion.
-                    </p>
-                </div>
-
-                <div class="bg-white rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-500 p-6 text-center group card-3d scroll-element">
-                    <div class="w-40 h-40 mx-auto mb-6 rounded-full overflow-hidden bg-gradient-to-br from-brandOrange to-yellow-400 p-1 shadow-lg">
-                        <div class="w-full h-full rounded-full bg-white p-1">
-                            <img src="images/editor.png" alt="Praisegod K. Mhema" class="w-full h-full object-cover rounded-full">
-                        </div>
-                    </div>
-                    <h4 class="text-xl font-black text-brandBlue">Praisegod K. Mhema</h4>
-                    <span class="text-brandOrange font-bold uppercase block mb-4 text-sm">Chief Editor</span>
-                    <p class="text-gray-600 leading-relaxed mb-6" style="font-size: 0.95rem; line-height: 1.6;">
-                        Guides content development, editorial standards, and publication quality across all platforms. Ensures excellence in every publication.
-                    </p>
-                </div>
-
-                <div class="bg-white rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-500 p-6 text-center group card-3d scroll-element">
-                    <div class="w-40 h-40 mx-auto mb-6 rounded-full overflow-hidden bg-gradient-to-br from-brandBlue to-blue-400 p-1 shadow-lg">
-                        <div class="w-full h-full rounded-full bg-white p-1">
-                            <img src="INSERT_LEADER_IMAGE_LINK_HERE" alt="Noah Benard" class="w-full h-full object-cover rounded-full">
-                        </div>
-                    </div>
-                    <h4 class="text-xl font-black text-brandBlue">Noah Benard</h4>
-                    <span class="text-brandOrange font-bold uppercase block mb-4 text-sm">Operations Manager</span>
-                    <p class="text-gray-600 leading-relaxed mb-6" style="font-size: 0.95rem; line-height: 1.6;">
-                        Leads coordination, project execution, and day-to-day operational performance. Ensures seamless delivery of all services.
-                    </p>
-                </div>
-
-                <div class="bg-white rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-500 p-6 text-center group card-3d scroll-element">
-                    <div class="w-40 h-40 mx-auto mb-6 rounded-full overflow-hidden bg-gradient-to-br from-purple-500 to-brandOrange p-1 shadow-lg">
-                        <div class="w-full h-full rounded-full bg-white p-1">
-                            <img src="images/lightness.png" alt="Lightness Fulgence" class="w-full h-full object-cover rounded-full">
-                        </div>
-                    </div>
-                    <h4 class="text-xl font-black text-brandBlue">Lightness Fulgence</h4>
-                    <span class="text-brandOrange font-bold uppercase block mb-4 text-sm">Administrator</span>
-                    <p class="text-gray-600 leading-relaxed mb-6" style="font-size: 0.95rem; line-height: 1.6;">
-                        Oversees operations, administration, and ensures organizational efficiency. Manages internal processes and client relations.
-                    </p>
-                </div>
-
-                <div class="bg-white rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-500 p-6 text-center group card-3d scroll-element">
-                    <div class="w-40 h-40 mx-auto mb-6 rounded-full overflow-hidden bg-gradient-to-br from-green-500 to-brandBlue p-1 shadow-lg">
-                        <div class="w-full h-full rounded-full bg-white p-1">
-                            <img src="INSERT_LEADER_IMAGE_LINK_HERE" alt="Peace Marco Bisake" class="w-full h-full object-cover rounded-full">
-                        </div>
-                    </div>
-                    <h4 class="text-xl font-black text-brandBlue">Peace Marco Bisake</h4>
-                    <span class="text-brandOrange font-bold uppercase block mb-4 text-sm">Strategic Consultant</span>
-                    <p class="text-gray-600 leading-relaxed mb-6" style="font-size: 0.95rem; line-height: 1.6;">
-                        Provides strategic insights, assessments, and advisory support for client projects. Drives business growth initiatives.
-                    </p>
-                </div>
-            </div>
-            
-            <div class="text-center mt-20 scroll-element">
-                <div class="bg-gradient-to-r from-brandOrange/20 to-brandBlue/20 rounded-2xl p-10 border border-gray-200">
-                    <h3 class="text-3xl font-black text-brandBlue mb-4">Join Our Growing Team</h3>
-                    <p class="text-gray-600 mb-8 max-w-2xl mx-auto">We're always looking for talented individuals passionate about making an impact</p>
-                    <a href="#contact" class="inline-flex items-center px-10 py-4 bg-brandBlue text-white font-black rounded-xl hover:bg-brandOrange transition-all duration-300 btn-hover">
-                        <i class="fas fa-user-plus mr-3"></i>Explore Career Opportunities
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="services" class="py-24 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-20 scroll-element">
-                <div class="inline-block px-4 py-2 bg-brandOrange/10 rounded-full mb-4">
-                    <span class="text-brandOrange font-bold tracking-widest uppercase text-sm">Our Expertise</span>
-                </div>
-                <h2 class="text-4xl font-black text-brandBlue mb-6">Our Core Services</h2>
-                <p class="text-gray-600 max-w-3xl mx-auto text-lg">Integrated solutions that help organizations increase visibility, strengthen engagement, and achieve measurable impact</p>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="bg-gradient-to-br from-white to-gray-50 rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 group border border-gray-100 scroll-element">
-                    <div class="h-56 relative overflow-hidden">
-                        <div class="absolute inset-0 bg-gradient-to-tr from-brandBlue to-brandOrange opacity-90"></div>
-                        <div class="absolute inset-0 flex items-center justify-center">
-                            <i class="fas fa-newspaper text-6xl text-white opacity-80"></i>
-                        </div>
-                        <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-6">
-                            <div class="text-white">
-                                <div class="text-4xl font-black opacity-90">01</div>
-                                <h3 class="text-2xl font-bold">Publishing</h3>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="p-8">
-                        <p class="text-gray-600 mb-6">Professional, high-quality publications that inform, educate, and connect audiences. We handle research, content development, design, print management, and distribution.</p>
-                        <div class="space-y-3 mb-6">
-                            <div class="flex items-center gap-2">
-                                <i class="fas fa-check-circle text-brandOrange"></i>
-                                <span class="text-sm">Research & Content Development</span>
-                            </div>
-                            <div class="flex items-center gap-2">
-                                <i class="fas fa-check-circle text-brandOrange"></i>
-                                <span class="text-sm">Graphic Design & Layout</span>
-                            </div>
-                            <div class="flex items-center gap-2">
-                                <i class="fas fa-check-circle text-brandOrange"></i>
-                                <span class="text-sm">Print & Digital Distribution</span>
-                            </div>
-                        </div>
-                        <a href="#contact" class="inline-flex items-center text-brandOrange font-bold hover:text-brandBlue transition">
-                            Start Your Publication <i class="fas fa-arrow-right ml-2"></i>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="bg-gradient-to-br from-white to-gray-50 rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 group border border-gray-100 scroll-element">
-                    <div class="h-56 relative overflow-hidden">
-                        <div class="absolute inset-0 bg-gradient-to-tr from-brandOrange to-yellow-500 opacity-90"></div>
-                        <div class="absolute inset-0 flex items-center justify-center">
-                            <i class="fas fa-chart-line text-6xl text-white opacity-80"></i>
-                        </div>
-                        <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-6">
-                            <div class="text-white">
-                                <div class="text-4xl font-black opacity-90">02</div>
-                                <h3 class="text-2xl font-bold">Marketing & Sales</h3>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="p-8">
-                        <p class="text-gray-600 mb-6">Strategic marketing and revenue-driven sales systems. We help organizations grow through sponsorship acquisition, advertising sales, and brand positioning.</p>
-                        <div class="space-y-3 mb-6">
-                            <div class="flex items-center gap-2">
-                                <i class="fas fa-check-circle text-brandOrange"></i>
-                                <span class="text-sm">Sponsorship Acquisition</span>
-                            </div>
-                            <div class="flex items-center gap-2">
-                                <i class="fas fa-check-circle text-brandOrange"></i>
-                                <span class="text-sm">Advertising Sales</span>
-                            </div>
-                            <div class="flex items-center gap-2">
-                                <i class="fas fa-check-circle text-brandOrange"></i>
-                                <span class="text-sm">Social Media Management</span>
-                            </div>
-                        </div>
-                        <a href="#contact" class="inline-flex items-center text-brandOrange font-bold hover:text-brandBlue transition">
-                            Boost Your Sales <i class="fas fa-arrow-right ml-2"></i>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="bg-gradient-to-br from-white to-gray-50 rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 group border border-gray-100 scroll-element">
-                    <div class="h-56 relative overflow-hidden">
-                        <div class="absolute inset-0 bg-gradient-to-tr from-blue-900 to-brandBlue opacity-90"></div>
-                        <div class="absolute inset-0 flex items-center justify-center">
-                            <i class="fas fa-calendar-check text-6xl text-white opacity-80"></i>
-                        </div>
-                        <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-6">
-                            <div class="text-white">
-                                <div class="text-4xl font-black opacity-90">03</div>
-                                <h3 class="text-2xl font-bold">Event Management</h3>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="p-8">
-                        <p class="text-gray-600 mb-6">Professional events delivered with precision. From concept development to post-event evaluation, we handle every detail for conferences, summits, and corporate meetings.</p>
-                        <div class="space-y-3 mb-6">
-                            <div class="flex items-center gap-2">
-                                <i class="fas fa-check-circle text-brandOrange"></i>
-                                <span class="text-sm">Concept Development</span>
-                            </div>
-                            <div class="flex items-center gap-2">
-                                <i class="fas fa-check-circle text-brandOrange"></i>
-                                <span class="text-sm">Venue Sourcing & Logistics</span>
-                            </div>
-                            <div class="flex items-center gap-2">
-                                <i class="fas fa-check-circle text-brandOrange"></i>
-                                <span class="text-sm">On-site Production</span>
-                            </div>
-                        </div>
-                        <a href="#contact" class="inline-flex items-center text-brandOrange font-bold hover:text-brandBlue transition">
-                            Plan Your Event <i class="fas fa-arrow-right ml-2"></i>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="bg-gradient-to-br from-white to-gray-50 rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 group border border-gray-100 scroll-element">
-                    <div class="h-56 relative overflow-hidden">
-                        <div class="absolute inset-0 bg-gradient-to-tr from-purple-700 to-brandBlue opacity-90"></div>
-                        <div class="absolute inset-0 flex items-center justify-center">
-                            <i class="fas fa-handshake text-6xl text-white opacity-80"></i>
-                        </div>
-                        <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-6">
-                            <div class="text-white">
-                                <div class="text-4xl font-black opacity-90">04</div>
-                                <h3 class="text-2xl font-bold">Business Management</h3>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="p-8">
-                        <p class="text-gray-600 mb-6">Operational and strategic partnerships. We provide management support, staff supervision, and financial coordination to help organizations achieve sustainable growth.</p>
-                        <div class="space-y-3 mb-6">
-                            <div class="flex items-center gap-2">
-                                <i class="fas fa-check-circle text-brandOrange"></i>
-                                <span class="text-sm">Strategy & Planning</span>
-                            </div>
-                            <div class="flex items-center gap-2">
-                                <i class="fas fa-check-circle text-brandOrange"></i>
-                                <span class="text-sm">Staff Management</span>
-                            </div>
-                            <div class="flex items-center gap-2">
-                                <i class="fas fa-check-circle text-brandOrange"></i>
-                                <span class="text-sm">Revenue Growth</span>
-                            </div>
-                        </div>
-                        <a href="#contact" class="inline-flex items-center text-brandOrange font-bold hover:text-brandBlue transition">
-                            Manage Your Business <i class="fas fa-arrow-right ml-2"></i>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="bg-gradient-to-br from-white to-gray-50 rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 group border border-gray-100 scroll-element">
-                    <div class="h-56 relative overflow-hidden">
-                        <div class="absolute inset-0 bg-gradient-to-tr from-green-600 to-brandBlue opacity-90"></div>
-                        <div class="absolute inset-0 flex items-center justify-center">
-                            <i class="fas fa-layer-group text-6xl text-white opacity-80"></i>
-                        </div>
-                        <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-6">
-                            <div class="text-white">
-                                <div class="text-4xl font-black opacity-90">05</div>
-                                <h3 class="text-2xl font-bold">Platform Development</h3>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="p-8">
-                        <p class="text-gray-600 mb-6">Training and capacity-building platform management. We develop comprehensive training programs and manage full training cycles for organizations.</p>
-                        <div class="space-y-3 mb-6">
-                            <div class="flex items-center gap-2">
-                                <i class="fas fa-check-circle text-brandOrange"></i>
-                                <span class="text-sm">Training Needs Assessment</span>
-                            </div>
-                            <div class="flex items-center gap-2">
-                                <i class="fas fa-check-circle text-brandOrange"></i>
-                                <span class="text-sm">Curriculum Development</span>
-                            </div>
-                            <div class="flex items-center gap-2">
-                                <i class="fas fa-check-circle text-brandOrange"></i>
-                                <span class="text-sm">Participant Management</span>
-                            </div>
-                        </div>
-                        <a href="#contact" class="inline-flex items-center text-brandOrange font-bold hover:text-brandBlue transition">
-                            Develop Your Platform <i class="fas fa-arrow-right ml-2"></i>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="bg-gradient-to-br from-brandBlue to-blue-900 rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 group scroll-element">
-                    <div class="h-56 relative overflow-hidden">
-                        <div class="absolute inset-0 bg-gradient-to-tr from-brandOrange/30 to-brandBlue/30"></div>
-                        <div class="absolute inset-0 flex items-center justify-center">
-                            <i class="fas fa-lightbulb text-6xl text-white opacity-80"></i>
-                        </div>
-                    </div>
-                    <div class="p-8 text-white">
-                        <h3 class="text-2xl font-bold mb-4">Custom Solutions</h3>
-                        <p class="mb-6 opacity-90">Need a tailored solution? We create customized strategies that address your specific business challenges and objectives.</p>
-                        <a href="#contact" class="inline-flex items-center px-6 py-3 bg-white text-brandBlue font-bold rounded-xl hover:bg-brandGray transition-all duration-300 btn-hover">
-                            <i class="fas fa-comments mr-2"></i>Discuss Your Needs
-                        </a>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="text-center mt-20 scroll-element">
-                <div class="bg-gradient-to-r from-brandOrange to-orange-600 rounded-2xl p-12 shadow-2xl">
-                    <h3 class="text-3xl font-black text-white mb-6">Transform Your Business Today</h3>
-                    <p class="text-white/90 mb-8 max-w-2xl mx-auto text-lg">Our integrated approach delivers measurable results. Let's discuss how we can help you achieve your goals</p>
-                    <a href="#contact" class="inline-flex items-center px-12 py-5 bg-white text-brandBlue font-black rounded-xl hover:bg-brandGray transition-all duration-300 btn-hover text-lg">
-                        <i class="fas fa-calendar-check mr-3"></i>Schedule Free Consultation
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Publications Section with 3D Carousel - REPLACED -->
-    <section id="publications" class="publications-section py-20 bg-brandBlue text-white overflow-hidden relative min-h-[800px] flex flex-col justify-center">
-        <div class="absolute inset-0 z-0 opacity-20">
-            <div class="publications-background" style="background-image: url('https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?q=80&w=1974&auto=format&fit=crop'); opacity: 1;"></div>
-        </div>
-        
-        <div class="relative z-10 max-w-7xl mx-auto px-4 w-full">
-            <div class="text-center mb-10 scroll-element">
-                <div class="inline-block px-4 py-2 bg-white/10 rounded-full mb-4 backdrop-blur-sm">
-                    <span class="text-brandOrange font-bold tracking-widest uppercase text-sm">Flagship Publications</span>
-                </div>
-                <h2 class="text-4xl font-black mb-4">East Africa's Premier Directories</h2>
-                <p class="text-gray-300 max-w-3xl mx-auto text-lg">Professional publications that inform, educate, and connect organizations across East Africa</p>
-            </div>
-
-            <div class="carousel-3d-container scroll-element">
-                <div class="relative w-full h-full" id="carousel-3d">
-                    <div class="carousel-3d-item">
-                        <div class="carousel-3d-card">
-                            <div class="h-3/4 relative overflow-hidden">
-                                <!-- Replace with your actual NGO Beacon cover image -->
-                                <img src="NGO_BEACON_COVER_IMAGE_URL_HERE" alt="NGO Beacon Cover" class="w-full h-full object-cover">
-                                <div class="absolute top-3 right-3 bg-brandOrange text-white text-xs font-bold px-2 py-1 rounded-full">Available Now</div>
-                            </div>
-                            <div class="h-1/4 p-4 bg-white text-gray-800 flex flex-col justify-between">
-                                <div>
-                                    <h3 class="font-bold text-brandBlue">NGO Beacon</h3>
-                                    <p class="text-xs text-gray-500 mt-1">East Africa's comprehensive guide to NGOs, donors, and development partners</p>
-                                </div>
-                                <a href="INSERT_PDF_LINK_HERE" target="_blank" class="w-full py-2 bg-brandOrange hover:bg-orange-600 text-white font-bold rounded text-center text-sm transition btn-hover">
-                                    Read Publication
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="carousel-3d-item">
-                        <div class="carousel-3d-card">
-                            <div class="h-3/4 relative overflow-hidden">
-                                <!-- Replace with your actual Kariakoo Directory cover image -->
-                                <img src="KARIAKOO_DIRECTORY_COVER_IMAGE_URL_HERE" alt="Kariakoo Directory Cover" class="w-full h-full object-cover">
-                                <div class="absolute top-3 right-3 bg-brandOrange text-white text-xs font-bold px-2 py-1 rounded-full">Coming Soon</div>
-                            </div>
-                            <div class="h-1/4 p-4 bg-white text-gray-800 flex flex-col justify-between">
-                                <div>
-                                    <h3 class="font-bold text-brandBlue">Kariakoo Directory</h3>
-                                    <p class="text-xs text-gray-500 mt-1">Complete commercial directory covering 1,200+ businesses</p>
-                                </div>
-                                <a href="INSERT_PDF_LINK_HERE" target="_blank" class="w-full py-2 bg-brandOrange hover:bg-orange-600 text-white font-bold rounded text-center text-sm transition btn-hover">
-                                    Read Publication
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="carousel-3d-item">
-                        <div class="carousel-3d-card">
-                            <div class="h-3/4 relative overflow-hidden">
-                                <!-- Replace with your actual IJUE GARI YAKO cover image -->
-                                <img src="images/cover_page-0001.jpg" alt="IJUE GARI YAKO Cover" class="w-full h-full object-cover">
-                                <div class="absolute top-3 right-3 bg-brandOrange text-white text-xs font-bold px-2 py-1 rounded-full">Available Now</div>
-                            </div>
-                            <div class="h-1/4 p-4 bg-white text-gray-800 flex flex-col justify-between">
-                                <div>
-                                    <h3 class="font-bold text-brandBlue">IJUE GARI YAKO</h3>
-                                    <p class="text-xs text-gray-500 mt-1">Automotive guide with consumer education and safety information</p>
-                                </div>
-                                <a href="INSERT_PDF_LINK_HERE" target="_blank" class="w-full py-2 bg-brandOrange hover:bg-orange-600 text-white font-bold rounded text-center text-sm transition btn-hover">
-                                    Read Publication
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="carousel-3d-item">
-                        <div class="carousel-3d-card">
-                            <div class="h-3/4 relative overflow-hidden">
-                                <!-- Replace with your actual The Tanzanian Way cover image -->
-                                <img src="TANZANIAN_WAY_COVER_IMAGE_URL_HERE" alt="The Tanzanian Way Cover" class="w-full h-full object-cover">
-                                <div class="absolute top-3 right-3 bg-brandOrange text-white text-xs font-bold px-2 py-1 rounded-full">Coming 2026</div>
-                            </div>
-                            <div class="h-1/4 p-4 bg-white text-gray-800 flex flex-col justify-between">
-                                <div>
-                                    <h3 class="font-bold text-brandBlue">The Tanzanian Way</h3>
-                                    <p class="text-xs text-gray-500 mt-1">National guide featuring immigration and tourism essentials</p>
-                                </div>
-                                <a href="INSERT_PDF_LINK_HERE" target="_blank" class="w-full py-2 bg-brandOrange hover:bg-orange-600 text-white font-bold rounded text-center text-sm transition btn-hover">
-                                    Read Publication
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="carousel-3d-item">
-                        <div class="carousel-3d-card">
-                            <div class="h-3/4 relative overflow-hidden">
-                                <!-- Replace with your actual Zanzibar's Finest cover image -->
-                                <img src="ZANZIBAR_FINEST_COVER_IMAGE_URL_HERE" alt="Zanzibar's Finest Cover" class="w-full h-full object-cover">
-                                <div class="absolute top-3 right-3 bg-brandOrange text-white text-xs font-bold px-2 py-1 rounded-full">Available</div>
-                            </div>
-                            <div class="h-1/4 p-4 bg-white text-gray-800 flex flex-col justify-between">
-                                <div>
-                                    <h3 class="font-bold text-brandBlue">Zanzibar's Finest</h3>
-                                    <p class="text-xs text-gray-500 mt-1">Premium lifestyle magazine showcasing Zanzibar's tourism and culture</p>
-                                </div>
-                                <a href="INSERT_PDF_LINK_HERE" target="_blank" class="w-full py-2 bg-brandOrange hover:bg-orange-600 text-white font-bold rounded text-center text-sm transition btn-hover">
-                                    Read Publication
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <button id="prevBtn" class="carousel-3d-btn left-4 w-12 h-12 rounded-full flex items-center justify-center text-white">
-                    <i class="fas fa-chevron-left text-xl"></i>
-                </button>
-                <button id="nextBtn" class="carousel-3d-btn right-4 w-12 h-12 rounded-full flex items-center justify-center text-white">
-                    <i class="fas fa-chevron-right text-xl"></i>
-                </button>
-            </div>
-
-            <div class="mt-8 scroll-element">
-                <div class="bg-gradient-to-r from-brandOrange/20 to-brandBlue/20 rounded-2xl p-8 border border-white/10 backdrop-blur-sm">
-                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                        <div>
-                            <h3 class="text-2xl font-black text-white mb-6">Why Our Directories Matter</h3>
-                            <ul class="space-y-4">
-                                <li class="flex items-start gap-3">
-                                    <div class="w-8 h-8 rounded-full bg-brandOrange flex items-center justify-center flex-shrink-0">
-                                        <i class="fas fa-book-reader text-white text-sm"></i>
-                                    </div>
-                                    <div>
-                                        <h4 class="font-bold text-white mb-1">Valuable Education</h4>
-                                        <p class="text-gray-300 text-sm">Our directories provide valuable information that educates the community.</p>
-                                    </div>
-                                </li>
-                                
-                                <li class="flex items-start gap-3">
-                                    <div class="w-8 h-8 rounded-full bg-brandOrange flex items-center justify-center flex-shrink-0">
-                                        <i class="fas fa-target text-white text-sm"></i>
-                                    </div>
-                                    <div>
-                                        <h4 class="font-bold text-white mb-1">Targeted Reach</h4>
-                                        <p class="text-gray-300 text-sm">Connect with your exact audience - NGOs, businesses, automotive enthusiasts, or tourists</p>
-                                    </div>
-                                </li>
-                                <li class="flex items-start gap-3">
-                                    <div class="w-8 h-8 rounded-full bg-brandOrange flex items-center justify-center flex-shrink-0">
-                                        <i class="fas fa-chart-line text-white text-sm"></i>
-                                    </div>
-                                    <div>
-                                        <h4 class="font-bold text-white mb-1">Year-Round Visibility</h4>
-                                        <p class="text-gray-300 text-sm">Your advertisement works for you 365 days a year, generating continuous leads</p>
-                                    </div>
-                                </li>
-                                <li class="flex items-start gap-3">
-                                    <div class="w-8 h-8 rounded-full bg-brandOrange flex items-center justify-center flex-shrink-0">
-                                        <i class="fas fa-shield-alt text-white text-sm"></i>
-                                    </div>
-                                    <div>
-                                        <h4 class="font-bold text-white mb-1">Credibility Boost</h4>
-                                        <p class="text-gray-300 text-sm">Association with trusted, professional publications enhances your brand reputation</p>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                        
-                        <div class="bg-white/10 rounded-xl p-6 border border-white/20">
-                            <h4 class="text-xl font-black text-white mb-4">🚀 Advertise With Our Directories</h4>
-                            <p class="text-gray-300 mb-6">Reach thousands of potential customers across East Africa</p>
-                            
-                            <div class="space-y-4 mb-6">
-                                <div class="flex justify-between items-center p-3 bg-white/5 rounded-lg">
-                                    <span class="text-white">Half Page Advertisement</span>
-                                    <span class="text-brandOrange font-bold">TZS 500,000</span>
-                                </div>
-                                <div class="flex justify-between items-center p-3 bg-white/5 rounded-lg">
-                                    <span class="text-white">Full Page Advertisement</span>
-                                    <span class="text-brandOrange font-bold">TZS 1,000,000</span>
-                                </div>
-                            </div>
-                            
-                            <button onclick="openAdModal()" class="w-full py-3 bg-gradient-to-r from-brandOrange to-orange-600 text-white font-black rounded-xl hover:from-orange-600 hover:to-brandOrange transition-all duration-300 btn-hover">
-                                <i class="fas fa-bullhorn mr-2"></i>Book Your Advertising Space
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="events" class="py-24 bg-gradient-to-b from-white to-gray-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-16 scroll-element">
-                <div class="inline-block px-4 py-2 bg-brandOrange/10 rounded-full mb-4">
-                    <span class="text-brandOrange font-bold uppercase text-sm">Event Execution</span>
-                </div>
-                <h2 class="text-4xl font-black text-brandBlue mb-6">Professional Event Management</h2>
-                <p class="text-gray-600 text-lg">We deliver events with precision and structure. From concept development to post-event evaluation, we handle every detail</p>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                <div class="group relative rounded-2xl overflow-hidden shadow-xl h-72 hover:shadow-2xl transition-all duration-500 scroll-element">
-                    <div class="absolute inset-0 bg-gradient-to-tr from-brandBlue to-blue-800"></div>
-                    <div class="absolute inset-0 flex items-center justify-center opacity-20">
-                        <i class="fas fa-users text-9xl text-white"></i>
-                    </div>
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
-                    <div class="absolute bottom-0 p-8">
-                        <h4 class="text-2xl font-black text-white mb-2">Conferences</h4>
-                        <p class="text-gray-300">Summits & Industry Gatherings</p>
-                        <div class="mt-4 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                            <a href="#contact" class="inline-flex items-center text-white font-bold hover:text-brandOrange">
-                                Plan Conference <i class="fas fa-arrow-right ml-2"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="group relative rounded-2xl overflow-hidden shadow-xl h-72 hover:shadow-2xl transition-all duration-500 scroll-element">
-                    <div class="absolute inset-0 bg-gradient-to-tr from-brandOrange to-orange-600"></div>
-                    <div class="absolute inset-0 flex items-center justify-center opacity-20">
-                        <i class="fas fa-rocket text-9xl text-white"></i>
-                    </div>
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
-                    <div class="absolute bottom-0 p-8">
-                        <h4 class="text-2xl font-black text-white mb-2">Launch Events</h4>
-                        <p class="text-gray-300">Product & Service Launches</p>
-                        <div class="mt-4 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                            <a href="#contact" class="inline-flex items-center text-white font-bold hover:text-brandBlue">
-                                Launch With Us <i class="fas fa-arrow-right ml-2"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="group relative rounded-2xl overflow-hidden shadow-xl h-72 hover:shadow-2xl transition-all duration-500 scroll-element">
-                    <div class="absolute inset-0 bg-gradient-to-tr from-purple-700 to-brandBlue"></div>
-                    <div class="absolute inset-0 flex items-center justify-center opacity-20">
-                        <i class="fas fa-store text-9xl text-white"></i>
-                    </div>
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
-                    <div class="absolute bottom-0 p-8">
-                        <h4 class="text-2xl font-black text-white mb-2">Exhibitions</h4>
-                        <p class="text-gray-300">Trade Shows & Booths</p>
-                        <div class="mt-4 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                            <a href="#contact" class="inline-flex items-center text-white font-bold hover:text-brandOrange">
-                                Exhibit With Us <i class="fas fa-arrow-right ml-2"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="group relative rounded-2xl overflow-hidden shadow-xl h-72 hover:shadow-2xl transition-all duration-500 scroll-element">
-                    <div class="absolute inset-0 bg-gradient-to-tr from-blue-900 to-brandBlue"></div>
-                    <div class="absolute inset-0 flex items-center justify-center opacity-20">
-                        <i class="fas fa-briefcase text-9xl text-white"></i>
-                    </div>
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
-                    <div class="absolute bottom-0 p-8">
-                        <h4 class="text-2xl font-black text-white mb-2">Corporate Meetings</h4>
-                        <p class="text-gray-300">Workshops & Board Meetings</p>
-                        <div class="mt-4 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                            <a href="#contact" class="inline-flex items-center text-white font-bold hover:text-brandOrange">
-                                Book Meeting <i class="fas fa-arrow-right ml-2"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="text-center mt-20 scroll-element">
-                <div class="bg-gradient-to-r from-brandBlue to-blue-900 rounded-2xl p-10 shadow-2xl">
-                    <h3 class="text-3xl font-black text-white mb-6">Let's Create an Unforgettable Experience</h3>
-                    <p class="text-white/90 mb-8 max-w-2xl mx-auto text-lg">From intimate gatherings to large-scale conferences, we bring your vision to life with precision and creativity</p>
-                    <div class="flex flex-col sm:flex-row gap-6 justify-center">
-                        <a href="#contact" class="px-10 py-4 bg-white text-brandBlue font-black rounded-xl hover:bg-brandGray transition-all duration-300 btn-hover">
-                            <i class="fas fa-calendar-alt mr-3"></i>Plan Your Event
-                        </a>
-                        <a href="#contact" class="px-10 py-4 border-2 border-white text-white font-black rounded-xl hover:bg-white hover:text-brandBlue transition-all duration-300">
-                            <i class="fas fa-file-alt mr-3"></i>Request Event Proposal
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Partners Section (Restored with increased speed) -->
-    <section class="py-20 bg-white overflow-hidden scroll-element">
-        <div class="max-w-7xl mx-auto px-4 mb-12 text-center">
-             <h3 class="text-brandBlue font-black text-3xl mb-4">Trusted By Industry Leaders</h3>
-             <p class="text-gray-600 max-w-2xl mx-auto">We partner with leading organizations across Tanzania and East Africa</p>
-        </div>
-        
-        <div class="relative w-full">
-            <div class="flex animate-scroll space-x-8 py-4">
-                <div class="flex space-x-8">
-                    <div class="w-48 h-28 bg-white rounded-xl shadow-lg flex items-center justify-center p-4 hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
-                         <img src="INSERT_PARTNER_LOGO_1_LINK_HERE" alt="Partner 1" class="max-w-full max-h-full object-contain opacity-80 hover:opacity-100 transition">
-                    </div>
-                    <div class="w-48 h-28 bg-white rounded-xl shadow-lg flex items-center justify-center p-4 hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
-                         <img src="INSERT_PARTNER_LOGO_2_LINK_HERE" alt="Partner 2" class="max-w-full max-h-full object-contain opacity-80 hover:opacity-100 transition">
-                    </div>
-                    <div class="w-48 h-28 bg-white rounded-xl shadow-lg flex items-center justify-center p-4 hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
-                         <img src="INSERT_PARTNER_LOGO_3_LINK_HERE" alt="Partner 3" class="max-w-full max-h-full object-contain opacity-80 hover:opacity-100 transition">
-                    </div>
-                    <div class="w-48 h-28 bg-white rounded-xl shadow-lg flex items-center justify-center p-4 hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
-                         <img src="INSERT_PARTNER_LOGO_4_LINK_HERE" alt="Partner 4" class="max-w-full max-h-full object-contain opacity-80 hover:opacity-100 transition">
-                    </div>
-                    <div class="w-48 h-28 bg-white rounded-xl shadow-lg flex items-center justify-center p-4 hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
-                         <img src="INSERT_PARTNER_LOGO_5_LINK_HERE" alt="Partner 5" class="max-w-full max-h-full object-contain opacity-80 hover:opacity-100 transition">
-                    </div>
-                    <div class="w-48 h-28 bg-white rounded-xl shadow-lg flex items-center justify-center p-4 hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
-                         <img src="INSERT_PARTNER_LOGO_6_LINK_HERE" alt="Partner 6" class="max-w-full max-h-full object-contain opacity-80 hover:opacity-100 transition">
-                    </div>
-                    <div class="w-48 h-28 bg-white rounded-xl shadow-lg flex items-center justify-center p-4 hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
-                         <img src="INSERT_PARTNER_LOGO_7_LINK_HERE" alt="Partner 7" class="max-w-full max-h-full object-contain opacity-80 hover:opacity-100 transition">
-                    </div>
-                    <div class="w-48 h-28 bg-white rounded-xl shadow-lg flex items-center justify-center p-4 hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
-                         <img src="INSERT_PARTNER_LOGO_8_LINK_HERE" alt="Partner 8" class="max-w-full max-h-full object-contain opacity-80 hover:opacity-100 transition">
-                    </div>
-                    <div class="w-48 h-28 bg-white rounded-xl shadow-lg flex items-center justify-center p-4 hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
-                         <img src="INSERT_PARTNER_LOGO_9_LINK_HERE" alt="Partner 9" class="max-w-full max-h-full object-contain opacity-80 hover:opacity-100 transition">
-                    </div>
-                    <div class="w-48 h-28 bg-white rounded-xl shadow-lg flex items-center justify-center p-4 hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
-                         <img src="INSERT_PARTNER_LOGO_10_LINK_HERE" alt="Partner 10" class="max-w-full max-h-full object-contain opacity-80 hover:opacity-100 transition">
-                    </div>
-                </div>
                 
-                <div class="flex space-x-8">
-                    <div class="w-48 h-28 bg-white rounded-xl shadow-lg flex items-center justify-center p-4 hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
-                         <img src="INSERT_PARTNER_LOGO_1_LINK_HERE" alt="Partner 1" class="max-w-full max-h-full object-contain opacity-80 hover:opacity-100 transition">
-                    </div>
-                    <div class="w-48 h-28 bg-white rounded-xl shadow-lg flex items-center justify-center p-4 hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
-                         <img src="INSERT_PARTNER_LOGO_2_LINK_HERE" alt="Partner 2" class="max-w-full max-h-full object-contain opacity-80 hover:opacity-100 transition">
-                    </div>
-                    <div class="w-48 h-28 bg-white rounded-xl shadow-lg flex items-center justify-center p-4 hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
-                         <img src="INSERT_PARTNER_LOGO_3_LINK_HERE" alt="Partner 3" class="max-w-full max-h-full object-contain opacity-80 hover:opacity-100 transition">
-                    </div>
-                    <div class="w-48 h-28 bg-white rounded-xl shadow-lg flex items-center justify-center p-4 hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
-                         <img src="INSERT_PARTNER_LOGO_4_LINK_HERE" alt="Partner 4" class="max-w-full max-h-full object-contain opacity-80 hover:opacity-100 transition">
-                    </div>
-                    <div class="w-48 h-28 bg-white rounded-xl shadow-lg flex items-center justify-center p-4 hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
-                         <img src="INSERT_PARTNER_LOGO_5_LINK_HERE" alt="Partner 5" class="max-w-full max-h-full object-contain opacity-80 hover:opacity-100 transition">
-                    </div>
-                    <div class="w-48 h-28 bg-white rounded-xl shadow-lg flex items-center justify-center p-4 hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
-                         <img src="INSERT_PARTNER_LOGO_6_LINK_HERE" alt="Partner 6" class="max-w-full max-h-full object-contain opacity-80 hover:opacity-100 transition">
-                    </div>
-                    <div class="w-48 h-28 bg-white rounded-xl shadow-lg flex items-center justify-center p-4 hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
-                         <img src="INSERT_PARTNER_LOGO_7_LINK_HERE" alt="Partner 7" class="max-w-full max-h-full object-contain opacity-80 hover:opacity-100 transition">
-                    </div>
-                    <div class="w-48 h-28 bg-white rounded-xl shadow-lg flex items-center justify-center p-4 hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
-                         <img src="INSERT_PARTNER_LOGO_8_LINK_HERE" alt="Partner 8" class="max-w-full max-h-full object-contain opacity-80 hover:opacity-100 transition">
-                    </div>
-                    <div class="w-48 h-28 bg-white rounded-xl shadow-lg flex items-center justify-center p-4 hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
-                         <img src="INSERT_PARTNER_LOGO_9_LINK_HERE" alt="Partner 9" class="max-w-full max-h-full object-contain opacity-80 hover:opacity-100 transition">
-                    </div>
-                    <div class="w-48 h-28 bg-white rounded-xl shadow-lg flex items-center justify-center p-4 hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
-                         <img src="INSERT_PARTNER_LOGO_10_LINK_HERE" alt="Partner 10" class="max-w-full max-h-full object-contain opacity-80 hover:opacity-100 transition">
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-        <div class="text-center mt-16 scroll-element">
-            <div class="bg-gradient-to-r from-brandOrange/10 to-brandBlue/10 rounded-2xl p-8 inline-block">
-                <p class="text-gray-700 mb-4">Interested in becoming a partner?</p>
-                <a href="#contact" class="inline-flex items-center px-8 py-3 bg-brandBlue text-white font-bold rounded-xl hover:bg-brandOrange transition-all duration-300 btn-hover">
-                    <i class="fas fa-handshake mr-2"></i>Become a Partner
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <section id="contact" class="py-24 bg-gradient-to-br from-white via-brandGray to-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16 scroll-element">
-                 <h2 class="text-4xl font-black text-brandBlue mb-6">Get In Touch Today</h2>
-                 <p class="text-gray-600 max-w-2xl mx-auto text-lg">Ready to start your project? Contact us for a consultation and let's create something amazing together</p>
-            </div>
-            
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 bg-white rounded-3xl shadow-2xl overflow-hidden border-glow scroll-element">
-                <div class="p-12 bg-gradient-to-br from-brandBlue to-blue-900 text-white flex flex-col justify-between">
-                    <div>
-                        <h3 class="text-3xl font-black mb-8">Contact Information</h3>
-                        <p class="text-gray-300 mb-10 text-lg">For project inquiries, sponsorship, partnerships, or consultations, we are ready to collaborate</p>
-                        
-                        <div class="space-y-8">
-                            <div class="flex items-center gap-6 p-6 bg-white/10 rounded-2xl hover:bg-white/20 transition">
-                                <div class="w-14 h-14 rounded-full bg-brandOrange flex items-center justify-center">
-                                    <i class="fas fa-phone text-xl"></i>
-                                </div>
-                                <div>
-                                    <p class="text-xs text-gray-400 uppercase">Phone</p>
-                                    <p class="font-black text-xl">+255 788 969 599</p>
-                                </div>
-                            </div>
-                            <div class="flex items-center gap-6 p-6 bg-white/10 rounded-2xl hover:bg-white/20 transition">
-                                <div class="w-14 h-14 rounded-full bg-brandOrange flex items-center justify-center">
-                                    <i class="fas fa-envelope text-xl"></i>
-                                </div>
-                                <div>
-                                    <p class="text-xs text-gray-400 uppercase">Email</p>
-                                    <p class="font-black text-xl">service@infolink.co.tz</p>
-                                    <p class="text-sm text-gray-400">info@infolink.co.tz</p>
-                                </div>
-                            </div>
-                            <div class="flex items-center gap-6 p-6 bg-white/10 rounded-2xl hover:bg-white/20 transition">
-                                <div class="w-14 h-14 rounded-full bg-brandOrange flex items-center justify-center">
-                                    <i class="fas fa-map-marker-alt text-xl"></i>
-                                </div>
-                                <div>
-                                    <p class="text-xs text-gray-400 uppercase">Location</p>
-                                    <p class="font-black text-xl">Dar es Salaam, Tanzania</p>
-                                    <p class="text-sm text-gray-400">East Africa</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="mt-12">
-                        <h4 class="font-black text-2xl mb-6">Connect With Us</h4>
-                        <div class="flex flex-wrap gap-4 mb-6">
-                            <a href="#" class="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center hover:bg-brandOrange hover:scale-110 transition-all duration-300">
-                                <i class="fab fa-facebook-f"></i>
-                            </a>
-                            <a href="#" class="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center hover:bg-brandOrange hover:scale-110 transition-all duration-300">
-                                <i class="fab fa-instagram"></i>
-                            </a>
-                            <a href="https://twitter.com/infolink_tz" target="_blank" class="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center hover:bg-brandOrange hover:scale-110 transition-all duration-300">
-                                <i class="fab fa-x-twitter"></i>
-                            </a>
-                            <a href="#" class="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center hover:bg-brandOrange hover:scale-110 transition-all duration-300">
-                                <i class="fab fa-linkedin-in"></i>
-                            </a>
-                            <a href="YOUR_WHATSAPP_LINK_HERE" target="_blank" class="w-12 h-12 rounded-full bg-green-500 flex items-center justify-center hover:bg-green-600 hover:scale-110 transition-all duration-300">
-                                <i class="fab fa-whatsapp"></i>
-                            </a>
-                        </div>
-                        <p class="text-sm text-brandOrange font-bold">@infolink_tz</p>
-                    </div>
-                </div>
-
-                <div class="p-12">
-                    <h3 class="text-3xl font-black text-brandBlue mb-8">Send Us a Message</h3>
-                    <p class="text-gray-600 mb-10">We typically respond within 24 hours</p>
-                    <form class="space-y-8">
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                            <div>
-                                <label class="block text-sm font-bold text-gray-600 mb-3">Your Name *</label>
-                                <input type="text" required class="w-full px-6 py-4 rounded-xl bg-gray-50 border border-gray-200 focus:border-brandOrange focus:outline-none focus:ring-2 focus:ring-brandOrange/30 transition text-lg">
-                            </div>
-                            <div>
-                                <label class="block text-sm font-bold text-gray-600 mb-3">Phone Number *</label>
-                                <input type="text" required class="w-full px-6 py-4 rounded-xl bg-gray-50 border border-gray-200 focus:border-brandOrange focus:outline-none focus:ring-2 focus:ring-brandOrange/30 transition text-lg">
-                            </div>
-                        </div>
-                        <div>
-                            <label class="block text-sm font-bold text-gray-600 mb-3">Email Address *</label>
-                            <input type="email" required class="w-full px-6 py-4 rounded-xl bg-gray-50 border border-gray-200 focus:border-brandOrange focus:outline-none focus:ring-2 focus:ring-brandOrange/30 transition text-lg">
-                        </div>
-                        <div>
-                            <label class="block text-sm font-bold text-gray-600 mb-3">Service Interest</label>
-                            <select class="w-full px-6 py-4 rounded-xl bg-gray-50 border border-gray-200 focus:border-brandOrange focus:outline-none focus:ring-2 focus:ring-brandOrange/30 transition text-lg">
-                                <option>Select a service</option>
-                                <option>Publishing</option>
-                                <option>Marketing & Sales</option>
-                                <option>Event Management</option>
-                                <option>Business Management</option>
-                                <option>Platform Development</option>
-                                <option>Advertising in Publications</option>
-                                <option>Other</option>
-                            </select>
-                        </div>
-                        <div>
-                            <label class="block text-sm font-bold text-gray-600 mb-3">Message *</label>
-                            <textarea rows="5" required class="w-full px-6 py-4 rounded-xl bg-gray-50 border border-gray-200 focus:border-brandOrange focus:outline-none focus:ring-2 focus:ring-brandOrange/30 transition text-lg"></textarea>
-                        </div>
-                        <button type="submit" class="w-full py-5 bg-gradient-to-r from-brandBlue to-blue-900 text-white font-black rounded-xl hover:from-brandOrange hover:to-orange-600 transition-all duration-300 shadow-2xl btn-hover text-xl">
-                            <i class="fas fa-paper-plane mr-3"></i>Send Message
-                        </button>
-                    </form>
+                <div class="relative h-[550px]">
                     
-                    <div class="mt-10 p-6 bg-brandGray rounded-2xl border-l-4 border-brandOrange">
-                        <p class="text-gray-700">
-                            <i class="fas fa-info-circle text-brandOrange text-xl mr-3"></i>
-                            <span class="font-bold">Prefer to talk?</span> Call us at <span class="text-brandBlue font-bold">+255 788 969 599</span> or WhatsApp us for immediate response
+                    <div id="text-slide-1" class="slide-content slide-active flex flex-col justify-center">
+                        <h1 class="font-title font-bold text-5xl lg:text-7xl text-white leading-tight mb-8">
+                            LINKING INFORMATION. <br>
+                            <span class="text-brandOrange">Creating Opportunities.</span>
+                        </h1>
+                        <p class="font-body font-normal text-lg text-white/90 mb-10 max-w-xl leading-relaxed">
+                            We connect people, organizations, and opportunities across East Africa through premium publishing, professional events, and strategic business management.
                         </p>
+                        <div class="flex flex-col sm:flex-row gap-5">
+                            <a href="contact.html" class="px-10 py-4 bg-brandOrange text-white font-btn font-semibold rounded shadow-lg hover:bg-white hover:text-brandOrange transition duration-300 text-center uppercase">
+                                Explore Our Service
+                            </a>
+                            <a href="contact.html" class=px-10 py-4 border-2 border-white text-white font-btn font-semibold rounded hover:bg-white hover:text-brandBlue transition duration-300 text-center uppercase">
+                                
+                            </a>
+                        </div>
+                    </div>
+
+                    <div id="text-slide-2" class="slide-content slide-hidden flex flex-col justify-center">
+                        <h2 class="font-header font-bold text-brandOrange text-xl tracking-wider uppercase mb-4">
+                            Automotive Edition
+                        </h2>
+                        <h1 class="font-title font-bold text-4xl lg:text-6xl text-white leading-tight mb-6 uppercase">
+                            ARE YOU IN <br>
+                            AUTOMOTIVE BUSINESS?
+                        </h1>
+                        <p class="font-body font-normal text-lg text-white/90 mb-8 max-w-xl leading-relaxed">
+                            Get listed in <strong class="text-white font-bold">IJUE GARI YAKO</strong> Tanzania auto directory and car ownership guide.
+                        </p>
+                        
+                        <div class="grid grid-cols-3 gap-6 mb-10 border-t border-white/20 pt-6">
+                            <div>
+                                <div class="text-3xl font-title font-bold text-brandOrange"><span class="count-up" data-target="1000">0</span>+</div>
+                                <div class="text-sm font-body text-white/80 mt-1">Car Owners</div>
+                            </div>
+                            <div>
+                                <div class="text-3xl font-title font-bold text-brandOrange"><span class="count-up" data-target="2000">0</span>+</div>
+                                <div class="text-sm font-body text-white/80 mt-1">Car Drivers</div>
+                            </div>
+                            <div>
+                                <div class="text-3xl font-title font-bold text-brandOrange"><span class="count-up" data-target="500">0</span>+</div>
+                                <div class="text-sm font-body text-white/80 mt-1">Auto Buyers</div>
+                            </div>
+                        </div>
+
+                        <div class="flex flex-col sm:flex-row gap-5">
+                            <a href="contact.html" class="px-10 py-4 bg-brandOrange text-white font-btn font-semibold rounded shadow-lg hover:bg-white hover:text-brandOrange transition duration-300 text-center uppercase">
+                                    Get Listed Now
+                            </a>
+                            <a href="contact.html" class=-10 py-4 border-2 border-white text-white font-btn font-semibold rounded hover:bg-white hover:text-brandBlue transition duration-300 text-center uppercase">
+                                
+                            </a>
+                        </div>
+                    </div>
+
+                    <div id="text-slide-3" class="slide-content slide-hidden flex flex-col justify-center">
+                        <h2 class="font-header font-bold text-brandOrange text-xl tracking-wider uppercase mb-4">
+                            Development Sector
+                        </h2>
+                        <h1 class="font-title font-bold text-4xl lg:text-6xl text-white leading-tight mb-6 uppercase">
+                            ARE YOU <br>
+                            NGO'S BEACON?
+                        </h1>
+                        <p class="font-body font-normal text-lg text-white/90 mb-8 max-w-xl leading-relaxed">
+                            Get listed in <strong class="text-white font-bold">NGO'S BEACON</strong>. Connect with donors and development partners.
+                        </p>
+
+                        <div class="grid grid-cols-3 gap-6 mb-10 border-t border-white/20 pt-6">
+                            <div>
+                                <div class="text-3xl font-title font-bold text-brandOrange"><span class="count-up" data-target="1000">0</span>+</div>
+                                <div class="text-sm font-body text-white/80 mt-1">NGOs Listed</div>
+                            </div>
+                            <div>
+                                <div class="text-3xl font-title font-bold text-brandOrange"><span class="count-up" data-target="50">0</span>+</div>
+                                <div class="text-sm font-body text-white/80 mt-1">Donors</div>
+                            </div>
+                            <div>
+                                <div class="text-3xl font-title font-bold text-brandOrange"><span class="count-up" data-target="25">0</span>+</div>
+                                <div class="text-sm font-body text-white/80 mt-1">Regions</div>
+                            </div>
+                        </div>
+
+                        <div class="flex flex-col sm:flex-row gap-5">
+                            <a href="contact.html" class="px-10 py-4 bg-brandOrange text-white font-btn font-semibold rounded shadow-lg hover:bg-white hover:text-brandOrange transition duration-300 text-center uppercase">
+                                Get Listed Now
+                            </a>
+                            <a href="contact.html" class=px-10 py-4 border-2 border-white text-white font-btn font-semibold rounded hover:bg-white hover:text-brandBlue transition duration-300 text-center uppercase">
+                                                            
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="hidden lg:block relative h-[800px]">
+                    <div class="perspective-container">
+                        
+                        <div id="visual-slide-1" class="absolute transition-all duration-1000 ease-in-out opacity-100 transform translate-y-0">
+                            <div class="hands-container">
+                                <!-- Replace YOUR_IMAGE_LINK_HERE with your actual hands image URL -->
+                                <img src="images/holding hands.png" alt="Human hands holding" class="hand-image">
+                            </div>
+                            <div class="text-center mt-8">
+                                <h3 class="text-white font-title font-bold text-2xl">Partnership & Growth</h3>
+                            </div>
+                        </div>
+
+                        <div id="visual-slide-2" class="absolute transition-all duration-1000 ease-in-out opacity-0 transform translate-y-20">
+                            <div class="book-3d animate-float">
+                                <div class="book-spine"></div>
+                                <div class="book-pages"></div>
+                                <div class="book-cover">
+                                    <img src="images/cover_page-0001.jpg" alt="IJUE GARI YAKO" class="w-full h-full object-cover">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="visual-slide-3" class="absolute transition-all duration-1000 ease-in-out opacity-0 transform translate-y-20">
+                            <div class="book-3d animate-float" style="animation-delay: 1s;">
+                                <div class="book-spine"></div>
+                                <div class="book-pages"></div>
+                                <div class="book-cover">
+                                    <img src="images/NGO DIRECTORY.png" alt="NGO BEACON" class="w-full h-full object-cover">
+                                </div>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
             </div>
         </div>
     </section>
-
-    <footer class="bg-brandBlue text-white pt-16 pb-12">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
-                <div>
-                    <img src="YOUR_LOGO_IMAGE_URL_HERE" alt="Infolink Logo" class="h-12 w-auto mb-6">
-                    <p class="text-gray-300 mb-6">Linking information and creating opportunities across East Africa through premium publishing, events, and business solutions.</p>
-                    <div class="flex space-x-4">
-                        <a href="#" class="text-gray-400 hover:text-brandOrange transition"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" class="text-gray-400 hover:text-brandOrange transition"><i class="fab fa-instagram"></i></a>
-                        <a href="https://twitter.com/infolink_tz" target="_blank" class="text-gray-400 hover:text-brandOrange transition"><i class="fab fa-x-twitter"></i></a>
-                        <a href="#" class="text-gray-400 hover:text-brandOrange transition"><i class="fab fa-linkedin-in"></i></a>
-                    </div>
-                </div>
-                <div>
-                    <h4 class="font-black text-lg mb-6">Quick Links</h4>
-                    <ul class="space-y-3">
-                        <li><a href="#home" class="text-gray-300 hover:text-brandOrange transition">Home</a></li>
-                        <li><a href="#about" class="text-gray-300 hover:text-brandOrange transition">About Us</a></li>
-                        <li><a href="#services" class="text-gray-300 hover:text-brandOrange transition">Services</a></li>
-                        <li><a href="#publications" class="text-gray-300 hover:text-brandOrange transition">Publications</a></li>
-                        <li><a href="#contact" class="text-gray-300 hover:text-brandOrange transition">Contact</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h4 class="font-black text-lg mb-6">Publications</h4>
-                    <ul class="space-y-3">
-                        <li><a href="INSERT_PDF_LINK_HERE" target="_blank" class="text-gray-300 hover:text-brandOrange transition">NGO Beacon</a></li>
-                        <li><a href="INSERT_PDF_LINK_HERE" target="_blank" class="text-gray-300 hover:text-brandOrange transition">Kariakoo Directory</a></li>
-                        <li><a href="INSERT_PDF_LINK_HERE" target="_blank" class="text-gray-300 hover:text-brandOrange transition">IJUE GARI YAKO</a></li>
-                        <li><a href="INSERT_PDF_LINK_HERE" target="_blank" class="text-gray-300 hover:text-brandOrange transition">The Tanzanian Way</a></li>
-                        <li><a href="INSERT_PDF_LINK_HERE" target="_blank" class="text-gray-300 hover:text-brandOrange transition">Zanzibar's Finest</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h4 class="font-black text-lg mb-6">Newsletter</h4>
-                    <p class="text-gray-300 mb-4">Subscribe for updates and industry insights</p>
-                    <div class="flex">
-                        <input type="email" placeholder="Your email" class="flex-grow px-4 py-3 rounded-l-lg text-gray-800 focus:outline-none">
-                        <button class="bg-brandOrange px-5 py-3 rounded-r-lg hover:bg-orange-600 transition">
-                            <i class="fas fa-paper-plane"></i>
-                        </button>
-                    </div>
-                    <p class="text-gray-400 text-sm mt-4">We respect your privacy. Unsubscribe anytime.</p>
-                </div>
-            </div>
-            
-            <div class="border-t border-white/20 pt-8 text-center">
-                <p class="text-gray-300">&copy; 2026 Infolink LTD. All Rights Reserved. | Linking Information. Creating Opportunities.</p>
-                <div class="mt-6">
-                    <a href="#home" class="inline-flex items-center px-6 py-2 bg-brandOrange text-white font-bold rounded-lg hover:bg-orange-600 transition btn-hover">
-                        <i class="fas fa-arrow-up mr-2"></i>Back to Top
-                    </a>
-                </div>
-            </div>
-        </div>
-    </footer>
 
     <script>
-        // Mobile Menu
-        const btn = document.getElementById('mobile-menu-btn');
-        const menu = document.getElementById('mobile-menu');
-        btn.addEventListener('click', () => menu.classList.toggle('hidden'));
-
-        // 3D Carousel Logic
-        const carousel3D = document.getElementById('carousel-3d');
-        const items3D = carousel3D.querySelectorAll('.carousel-3d-item');
-        const prevBtn = document.getElementById('prevBtn');
-        const nextBtn = document.getElementById('nextBtn');
-        
-        let currentIndex3D = 0;
-        const totalItems3D = items3D.length;
-        const angle3D = 360 / totalItems3D;
-        let autoRotateTimer3D;
-
-        function updateCarousel3D() {
-            items3D.forEach((item, index) => {
-                let theta = (index - currentIndex3D) * angle3D;
-                
-                const radius = window.innerWidth < 768 ? 280 : 400;
-                
-                item.style.transform = `rotateY(${theta}deg) translateZ(${radius}px)`;
-                
-                const normalizedTheta = (theta % 360 + 360) % 360;
-                const isFront = normalizedTheta < 30 || normalizedTheta > 330;
-                
-                item.style.opacity = isFront ? 1 : 0.5;
-                item.style.zIndex = isFront ? 10 : 1;
-                item.style.filter = isFront ? 'blur(0px)' : 'blur(3px) grayscale(50%)';
-            });
-        }
-
-        function nextSlide3D() {
-            currentIndex3D++;
-            updateCarousel3D();
-        }
-
-        function prevSlide3D() {
-            currentIndex3D--;
-            updateCarousel3D();
-        }
-
-        function resetTimer3D() {
-            clearInterval(autoRotateTimer3D);
-            autoRotateTimer3D = setInterval(nextSlide3D, 4000);
-        }
-
-        // Event Listeners for 3D Carousel Buttons
-        nextBtn.addEventListener('click', () => { nextSlide3D(); resetTimer3D(); });
-        prevBtn.addEventListener('click', () => { prevSlide3D(); resetTimer3D(); });
-
-        // Initialize 3D Carousel
-        updateCarousel3D();
-        autoRotateTimer3D = setInterval(nextSlide3D, 4000);
-        
-        // Resize Handler
-        window.addEventListener('resize', updateCarousel3D);
-
-        // Advertisement Modal Functions
-        function openAdModal() {
-            document.getElementById('adModal').classList.remove('hidden');
-            document.body.style.overflow = 'hidden';
-        }
-        
-        function closeAdModal() {
-            document.getElementById('adModal').classList.add('hidden');
-            document.body.style.overflow = 'auto';
-        }
-        
-        function bookAdSpace(type) {
-            closeAdModal();
-            scrollToContact();
-            setTimeout(() => {
-                alert(`Thank you for your interest in ${type} page advertisement! Our team will contact you shortly.`);
-            }, 500);
-        }
-        
-        function scrollToContact() {
-            document.querySelector('#contact').scrollIntoView({ behavior: 'smooth' });
-        }
-        
-        function showComingSoon(message) {
-            alert(`✨ ${message} ✨\n\nReserve your copy today to be among the first to receive it!`);
-        }
-
-        // Close modal on outside click
-        document.getElementById('adModal').addEventListener('click', (e) => {
-            if (e.target.id === 'adModal') closeAdModal();
-        });
-
-        // Smooth scroll for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const targetId = this.getAttribute('href');
-                if (targetId === '#') return;
-                
-                const targetElement = document.querySelector(targetId);
-                if (targetElement) {
-                    window.scrollTo({
-                        top: targetElement.offsetTop - 80,
-                        behavior: 'smooth'
-                    });
-                    
-                    // Close mobile menu if open
-                    if (!menu.classList.contains('hidden')) {
-                        menu.classList.add('hidden');
-                    }
+        document.addEventListener('DOMContentLoaded', function() {
+            // Mobile Menu Toggle
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            
+            mobileMenuButton.addEventListener('click', function() {
+                mobileMenu.classList.toggle('hidden');
+                // Change icon
+                const icon = mobileMenuButton.querySelector('i');
+                if (mobileMenu.classList.contains('hidden')) {
+                    icon.classList.remove('fa-times');
+                    icon.classList.add('fa-bars');
+                } else {
+                    icon.classList.remove('fa-bars');
+                    icon.classList.add('fa-times');
                 }
             });
-        });
-
-        // Form submission
-        document.querySelector('form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            alert('Thank you for your message! We will get back to you within 24 hours.');
-            this.reset();
-        });
-
-        // Scroll Animation
-        let ticking = false;
-        
-        function handleScroll() {
-            if (!ticking) {
-                requestAnimationFrame(() => {
-                    const elements = document.querySelectorAll('.scroll-element');
-                    const windowHeight = window.innerHeight;
-                    
-                    elements.forEach(element => {
-                        const elementTop = element.getBoundingClientRect().top;
-                        const elementVisible = 150;
-                        
-                        if (elementTop < windowHeight - elementVisible) {
-                            element.classList.add('visible');
-                        }
-                    });
-                    
-                    ticking = false;
+            
+            // Close mobile menu when clicking on a link
+            const mobileMenuLinks = mobileMenu.querySelectorAll('a');
+            mobileMenuLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    mobileMenu.classList.add('hidden');
+                    const icon = mobileMenuButton.querySelector('i');
+                    icon.classList.remove('fa-times');
+                    icon.classList.add('fa-bars');
                 });
+            });
+            
+            // Close mobile menu when clicking outside
+            document.addEventListener('click', function(event) {
+                if (!mobileMenu.contains(event.target) && !mobileMenuButton.contains(event.target)) {
+                    mobileMenu.classList.add('hidden');
+                    const icon = mobileMenuButton.querySelector('i');
+                    icon.classList.remove('fa-times');
+                    icon.classList.add('fa-bars');
+                }
+            });
+
+            // Slide functionality (existing)
+            const totalSlides = 3;
+            let currentSlide = 1;
+            const slideDuration = 6000; 
+
+            function animateNumbers(slideId) {
+                const container = document.getElementById(`text-slide-${slideId}`);
+                if (!container) return;
                 
-                ticking = true;
+                const counters = container.querySelectorAll('.count-up');
+                
+                counters.forEach(counter => {
+                    const target = +counter.getAttribute('data-target');
+                    const duration = 2000; 
+                    const increment = target / (duration / 16); 
+                    
+                    let current = 0;
+                    counter.innerText = '0';
+                    
+                    const updateCount = () => {
+                        current += increment;
+                        if (current < target) {
+                            counter.innerText = Math.ceil(current);
+                            requestAnimationFrame(updateCount);
+                        } else {
+                            counter.innerText = target;
+                        }
+                    };
+                    setTimeout(updateCount, 500);
+                });
             }
-        }
-        
-        // Initial check
-        handleScroll();
-        
-        // Listen for scroll events
-        window.addEventListener('scroll', handleScroll);
-        
-        // Trigger book entrance animation on page load
-        window.addEventListener('load', function() {
-            const book3D = document.querySelector('.book-container-3d');
-            if (book3D) {
-                book3D.style.animation = 'slide-down-bounce 1.5s cubic-bezier(0.25, 1, 0.5, 1) forwards';
+
+            function changeSlide() {
+                let nextSlide = currentSlide + 1;
+                if (nextSlide > totalSlides) nextSlide = 1;
+
+                // Toggle Text
+                const currentText = document.getElementById(`text-slide-${currentSlide}`);
+                currentText.classList.remove('slide-active');
+                currentText.classList.add('slide-hidden');
+
+                const nextText = document.getElementById(`text-slide-${nextSlide}`);
+                nextText.classList.remove('slide-hidden');
+                void nextText.offsetWidth; // Force Reflow
+                nextText.classList.add('slide-active');
+
+                // Toggle Visuals (Desktop only)
+                const currentVisual = document.getElementById(`visual-slide-${currentSlide}`);
+                if (currentVisual) {
+                    currentVisual.classList.remove('opacity-100', 'translate-y-0');
+                    currentVisual.classList.add('opacity-0', 'translate-y-20');
+                }
+
+                const nextVisual = document.getElementById(`visual-slide-${nextSlide}`);
+                if (nextVisual) {
+                    setTimeout(() => {
+                        nextVisual.classList.remove('opacity-0', 'translate-y-20');
+                        nextVisual.classList.add('opacity-100', 'translate-y-0');
+                    }, 100);
+                }
+
+                animateNumbers(nextSlide);
+                currentSlide = nextSlide;
             }
+
+            setInterval(changeSlide, slideDuration);
         });
     </script>
 </body>
