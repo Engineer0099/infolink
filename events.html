@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events | Infolink Tanzania - Professional nagement</title>
+    <meta name="description" content="Professional event management services in Tanzania. Conferences, product launches, exhibitions, and corporate meetings with precision and creativity.">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Open+Sans:wght@300;400;600&family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brandBlue: '#0e2a5c',
+                        brandOrange: '#f58025',
+                        brandGray: '#f8fafc',
+                    },
+                    fontFamily: {
+                        'montserrat': ['Montserrat', 'sans-serif'],
+                        'poppins': ['Poppins', 'sans-serif'],
+                        'opensans': ['Open Sans', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        html { scroll-behavior: smooth; }
+        
+        /* Font Classes based on Guide */
+        .title-font { 
+            font-family: 'Montserrat', 'Poppins', sans-serif; 
+            font-weight: 800; /* Extra Bold */
+        }
+        
+        .header-font { 
+            font-family: 'Montserrat', sans-serif; 
+            font-weight: 600; /* Semi-Bold */
+        }
+        
+        .body-font { 
+            font-family: 'Open Sans', sans-serif; 
+            font-weight: 400; /* Regular */
+        }
+        
+        .button-font { 
+            font-family: 'Montserrat', 'Poppins', sans-serif; 
+            font-weight: 500; /* Medium */
+        }
+        
+        .btn-hover { 
+            transition: all 0.3s ease; 
+        }
+        
+        .btn-hover:hover { 
+            transform: translateY(-3px); 
+            box-shadow: 0 15px 30px rgba(245, 128, 37, 0.3); 
+        }
+        
+        /* Event Card Styles */
+        .event-card {
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            position: relative;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        }
+        
+        .event-card:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+        }
+        
+        .event-image {
+            height: 250px;
+            width: 100%;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .event-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(14, 42, 92, 0.9), rgba(245, 128, 37, 0.7));
+            opacity: 0;
+            transition: opacity 0.5s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .event-card:hover .event-overlay {
+            opacity: 1;
+        }
+        
+        .event-category {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background: rgba(255, 255, 255, 0.9);
+            color: #0e2a5c;
+            padding: 6px 15px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 12px;
+            z-index: 10;
+        }
+        
+        /* Timeline Styles */
+        .timeline-item {
+            position: relative;
+            padding-left: 40px;
+            margin-bottom: 30px;
+        }
+        
+        .timeline-dot {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: #f58025;
+            border: 3px solid white;
+            box-shadow: 0 0 0 3px #f58025;
+        }
+        
+        .timeline-line {
+            position: absolute;
+            left: 9px;
+            top: 30px;
+            bottom: -30px;
+            width: 2px;
+            background: #e5e7eb;
+        }
+        
+        .timeline-item:last-child .timeline-line {
+            display: none;
+        }
+        
+        /* Gradient Text */
+        .gradient-text {
+            background: linear-gradient(45deg, #0e2a5c, #f58025);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        /* Stats Cards */
+        .stat-card {
+            background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+            border: 1px solid #e5e7eb;
+            transition: all 0.3s ease;
+        }
+        
+        .stat-card:hover {
+            transform: translateY(-5px);
+            border-color: #f58025;
+            box-shadow: 0 10px 25px rgba(245, 128, 37, 0.1);
+        }
+        
+        /* Scroll Animation */
+        .scroll-element {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
+        }
+        
+        .scroll-element.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="bg-white text-gray-800 antialiased">
+    <!-- WhatsApp Float -->
+    <a href="https://wa.me/255788969599" target="_blank" class="fixed bottom-6 right-6 z-50 bg-green-500 text-white w-14 h-14 rounded-full flex items-center justify-center hover:bg-green-600 transition-all duration-300 shadow-2xl">
+        <i class="fab fa-whatsapp text-2xl"></i>
+    </a>
+
+    <!-- Blue Header with White Words -->
+    <header class="fixed w-full z-40 bg-brandBlue text-white shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <a href="home.html" class="flex-shrink-0 flex items-center group">
+                    <img src="images/logo.png" alt="Infolink Logo" class="h-23 w-40">
+                </a>
+                
+                <div class="hidden lg:flex space-x-8 items-center text-sm font-semibold uppercase tracking-wide">
+                    <a href="home.html" class="text-white hover:text-brandOrange transition border-b-2 border-transparent hover:border-brandOrange pb-1 button-font">HOME</a>
+                    <a href="About us.html" class="text-white hover:text-brandOrange transition border-b-2 border-transparent hover:border-brandOrange pb-1 button-font">ABOUT US</a>
+                    <a href="team.html" class="text-white hover:text-brandOrange transition border-b-2 border-transparent hover:border-brandOrange pb-1 button-font">OUR TEAM</a>
+                    <a href="service.html" class="text-white hover:text-brandOrange transition border-b-2 border-transparent hover:border-brandOrange pb-1 button-font">SERVICES</a>
+                    <a href="flagship publication.html" class="text-white hover:text-brandOrange transition border-b-2 border-transparent hover:border-brandOrange pb-1 button-font">PUBLICATIONS</a>
+                    <a href="events.html" class="text-white font-bold border-b-2 border-brandOrange pb-1 button-font">EVENTS</a>
+                    <a href="contact.html" class="ml-4 px-8 py-3 bg-brandOrange text-white rounded-full hover:bg-white hover:text-brandOrange transition-all duration-300 shadow-lg btn-hover button-font">
+                        GET IN TOUCH <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+
+                <div class="lg:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-white text-2xl focus:outline-none p-2">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-brandBlue border-t border-white/20 shadow-xl">
+            <div class="px-4 pt-2 pb-6 space-y-1">
+                <a href="" class="block px-3 py-3 text-white hover:text-brandOrange hover:bg-white/10 button-font uppercase">HOME</a>
+                <a href="home.html" class="block px-3 py-3 text-white hover:text-brandOrange hover:bg-white/10 button-font uppercase">ABOUT US</a>
+                <a href="team.html" class="block px-3 py-3 text-white hover:text-brandOrange hover:bg-white/10 button-font uppercase">OUR TEAM</a>
+                <a href="service.html" class="block px-3 py-3 text-white hover:text-brandOrange hover:bg-white/10 button-font uppercase">SERVICES</a>
+                <a href="flagship publication.html" class="block px-3 py-3 text-white hover:text-brandOrange hover:bg-white/10 button-font uppercase">PUBLICATIONS</a>
+                <a href="events.html" class="block px-3 py-3 text-white font-bold bg-white/10 border-l-4 border-brandOrange button-font uppercase">EVENTS</a>
+                <a href="contact.html" class="block px-3 py-3 bg-brandOrange text-white font-bold rounded-lg mx-2 text-center hover:bg-white hover:text-brandOrange transition-all duration-300 button-font uppercase">GET IN TOUCH</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+   <section class="pt-32 pb-20 lg:pt-40 lg:pb-28 bg-brandBlue">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center text-white mb-12">
+                <div class="inline-block px-4 py-2 bg-white/10 rounded-full mb-6 backdrop-blur-sm">
+                    <span class="text-brandOrange font-bold tracking-widest uppercase text-sm button-font">Event Excellence</span>
+                </div>
+                <h1 class="text-5xl lg:text-6xl title-font mb-6">Professional <span class="white">Event Management</span></h1>
+                <p class="text-xl text-gray-300 max-w-3xl mx-auto body-font">We deliver events with precision and creativity. From concept development to post-event evaluation, we handle every detail</p>
+                <div class="mt-10">
+                    <a href="contact.html" class="inline-flex items-center px-10 py-4 bg-brandOrange text-white font-bold rounded-xl hover:bg-white hover:text-brandOrange transition-all duration-300 btn-hover button-font">
+                        <i class="fas fa-calendar-check mr-3"></i>Plan Your Event
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Event Types -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 scroll-element">
+                <div class="inline-block px-4 py-2 bg-brandOrange/10 rounded-full mb-4">
+                    <span class="text-brandOrange font-bold tracking-widest uppercase text-sm button-font">Our Expertise</span>
+                </div>
+                <h2 class="text-4xl title-font text-brandBlue mb-6">Types of Events We Manage</h2>
+                <p class="text-gray-600 max-w-3xl mx-auto text-lg body-font">From intimate gatherings to large-scale conferences, we bring your vision to life with precision and creativity</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+                <!-- Conference -->
+                <div class="event-card scroll-element">
+                    <div class="event-image">
+                        <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?q=80&w=2070&auto=format&fit=crop" alt="Conference" class="w-full h-full object-cover">
+                        <div class="event-overlay">
+                            <span class="text-white text-lg font-bold">Summits & Industry Gatherings</span>
+                        </div>
+                        <div class="event-category button-font">Conference</div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl header-font text-brandBlue mb-3">Conferences</h3>
+                        <p class="text-gray-600 mb-4 body-font">Professional summits and industry gatherings with full logistics, speaker management, and participant coordination.</p>
+                        <div class="flex items-center text-sm text-gray-500 mb-4">
+                            <i class="fas fa-users mr-2"></i>
+                            <span class="body-font">50-5,000 attendees</span>
+                        </div>
+                        <a href="contact.html" class="inline-flex items-center text-brandOrange font-bold hover:text-brandBlue transition button-font">
+                            Plan Conference <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Product Launch -->
+                <div class="event-card scroll-element">
+                    <div class="event-image">
+                        <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?q=80&w=2070&auto=format&fit=crop" alt="Product Launch" class="w-full h-full object-cover">
+                        <div class="event-overlay">
+                            <span class="text-white text-lg font-bold">Product & Service Launches</span>
+                        </div>
+                        <div class="event-category button-font">Launch Event</div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl header-font text-brandBlue mb-3">Product Launches</h3>
+                        <p class="text-gray-600 mb-4 body-font">Create buzz and excitement with memorable launch events that capture media attention and generate sales.</p>
+                        <div class="flex items-center text-sm text-gray-500 mb-4">
+                            <i class="fas fa-bullhorn mr-2"></i>
+                            <span class="body-font">Media & influencer outreach</span>
+                        </div>
+                        <a href="contact.html" class="inline-flex items-center text-brandOrange font-bold hover:text-brandBlue transition button-font">
+                            Launch With Us <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Exhibition -->
+                <div class="event-card scroll-element">
+                    <div class="event-image">
+                        <img src="https://images.unsplash.com/photo-1542744095-fcf48d80b0fd?q=80&w=2070&auto=format&fit=crop" alt="Exhibition" class="w-full h-full object-cover">
+                        <div class="event-overlay">
+                            <span class="text-white text-lg font-bold">Trade Shows & Exhibition Booths</span>
+                        </div>
+                        <div class="event-category button-font">Exhibition</div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl header-font text-brandBlue mb-3">Exhibitions</h3>
+                        <p class="text-gray-600 mb-4 body-font">Trade shows and exhibition booths designed to maximize engagement and generate quality leads for your business.</p>
+                        <div class="flex items-center text-sm text-gray-500 mb-4">
+                            <i class="fas fa-store mr-2"></i>
+                            <span class="body-font">Booth design & setup</span>
+                        </div>
+                        <a href="contact.html" class="inline-flex items-center text-brandOrange font-bold hover:text-brandBlue transition button-font">
+                            Exhibit With Us <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Corporate Meeting -->
+                <div class="event-card scroll-element">
+                    <div class="event-image">
+                        <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?q=80&w=2030&auto=format&fit=crop" alt="Corporate Meeting" class="w-full h-full object-cover">
+                        <div class="event-overlay">
+                            <span class="text-white text-lg font-bold">Workshops & Board Meetings</span>
+                        </div>
+                        <div class="event-category button-font">Corporate</div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl header-font text-brandBlue mb-3">Corporate Meetings</h3>
+                        <p class="text-gray-600 mb-4 body-font">Executive retreats, board meetings, and workshops with premium venues and flawless execution.</p>
+                        <div class="flex items-center text-sm text-gray-500 mb-4">
+                            <i class="fas fa-briefcase mr-2"></i>
+                            <span class="body-font">Executive-level service</span>
+                        </div>
+                        <a href="contact.html" class="inline-flex items-center text-brandOrange font-bold hover:text-brandBlue transition button-font">
+                            Book Meeting <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Event Process -->
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 scroll-element">
+                <div class="inline-block px-4 py-2 bg-brandBlue/10 rounded-full mb-4">
+                    <span class="text-brandBlue font-bold tracking-widest uppercase text-sm button-font">Our Process</span>
+                </div>
+                <h2 class="text-4xl title-font text-brandBlue mb-6">How We Deliver Flawless Events</h2>
+                <p class="text-gray-600 max-w-3xl mx-auto text-lg body-font">A structured approach to ensure every event exceeds expectations</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <div class="scroll-element">
+                    <!-- Timeline -->
+                    <div class="space-y-2">
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-line"></div>
+                            <div class="bg-white rounded-xl p-6 shadow-md">
+                                <h3 class="text-xl header-font text-brandBlue mb-2">1. Concept Development</h3>
+                                <p class="text-gray-600 body-font">We work with you to understand your objectives, target audience, and desired outcomes to create a compelling event concept.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-line"></div>
+                            <div class="bg-white rounded-xl p-6 shadow-md">
+                                <h3 class="text-xl header-font text-brandBlue mb-2">2. Planning & Strategy</h3>
+                                <p class="text-gray-600 body-font">Detailed planning including budget, timeline, venue selection, speaker coordination, and marketing strategy.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-line"></div>
+                            <div class="bg-white rounded-xl p-6 shadow-md">
+                                <h3 class="text-xl header-font text-brandBlue mb-2">3. Execution & Management</h3>
+                                <p class="text-gray-600 body-font">On-site management, vendor coordination, technical setup, and real-time problem-solving during the event.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-line"></div>
+                            <div class="bg-white rounded-xl p-6 shadow-md">
+                                <h3 class="text-xl header-font text-brandBlue mb-2">4. Post-Event Evaluation</h3>
+                                <p class="text-gray-600 body-font">Comprehensive reporting, attendee feedback analysis, and ROI measurement for continuous improvement.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="scroll-element">
+                    <div class="bg-gradient-to-br from-brandBlue to-blue-900 rounded-2xl p-8 text-white h-full">
+                        <h3 class="text-2xl title-font mb-6">Why Choose Infolink Events</h3>
+                        <div class="space-y-6">
+                            <div class="flex items-start gap-4">
+                                <div class="w-12 h-12 rounded-full bg-brandOrange/20 flex items-center justify-center flex-shrink-0">
+                                    <i class="fas fa-check text-brandOrange text-xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="header-font text-lg mb-2">Expert Team</h4>
+                                    <p class="text-gray-300 body-font">Experienced event professionals with 10+ years in the industry.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start gap-4">
+                                <div class="w-12 h-12 rounded-full bg-brandOrange/20 flex items-center justify-center flex-shrink-0">
+                                    <i class="fas fa-check text-brandOrange text-xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="header-font text-lg mb-2">Full-Service Approach</h4>
+                                    <p class="text-gray-300 body-font">From concept to completion, we handle every aspect of your event.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start gap-4">
+                                <div class="w-12 h-12 rounded-full bg-brandOrange/20 flex items-center justify-center flex-shrink-0">
+                                    <i class="fas fa-check text-brandOrange text-xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="header-font text-lg mb-2">Vendor Network</h4>
+                                    <p class="text-gray-300 body-font">Access to trusted venues, caterers, AV teams, and suppliers across East Africa.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start gap-4">
+                                <div class="w-12 h-12 rounded-full bg-brandOrange/20 flex items-center justify-center flex-shrink-0">
+                                    <i class="fas fa-check text-brandOrange text-xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="header-font text-lg mb-2">Technology Integration</h4>
+                                    <p class="text-gray-300 body-font">Modern event technology for registration, engagement, and analytics.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-10">
+                            <a href="contact.html" class="inline-flex items-center px-8 py-3 bg-brandOrange text-white font-bold rounded-xl hover:bg-white hover:text-brandOrange transition-all duration-300 btn-hover button-font">
+                                <i class="fas fa-file-alt mr-2"></i>Request Event Proposal
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section (Hidden) -->
+    <section class="py-20 bg-white hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+                <div class="stat-card scroll-element">
+                    <div class="text-4xl title-font text-brandBlue mb-2">250+</div>
+                    <h4 class="header-font text-gray-700">Events Managed</h4>
+                    <p class="text-gray-500 text-sm mt-2 body-font">Since 2015</p>
+                </div>
+                
+                <div class="stat-card scroll-element">
+                    <div class="text-4xl title-font text-brandBlue mb-2">50,000+</div>
+                    <h4 class="header-font text-gray-700">Attendees Reached</h4>
+                    <p class="text-gray-500 text-sm mt-2 body-font">Across East Africa</p>
+                </div>
+                
+                <div class="stat-card scroll-element">
+                    <div class="text-4xl title-font text-brandBlue mb-2">98%</div>
+                    <h4 class="header-font text-gray-700">Client Satisfaction</h4>
+                    <p class="text-gray-500 text-sm mt-2 body-font">Repeat business rate</p>
+                </div>
+                
+                <div class="stat-card scroll-element">
+                    <div class="text-4xl title-font text-brandBlue mb-2">15+</div>
+                    <h4 class="header-font text-gray-700">Industry Awards</h4>
+                    <p class="text-gray-500 text-sm mt-2 body-font">Recognition for excellence</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form Section -->
+    <section id="contact-form" class="py-20 bg-gray-50">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-gradient-to-br from-brandBlue to-blue-900 rounded-2xl shadow-2xl overflow-hidden">
+                <div class="p-10 text-center text-white">
+                    <h2 class="text-3xl title-font mb-6">Ready to Create an Unforgettable Event?</h2>
+                    <p class="text-gray-300 mb-8 body-font">Tell us about your event and we'll provide a custom proposal within 24 hours</p>
+                    
+                    <form class="space-y-6">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <input type="text" placeholder="Your Name *" required class="w-full px-6 py-4 rounded-xl bg-white/10 border border-white/30 text-white placeholder-gray-300 focus:outline-none focus:border-brandOrange body-font">
+                            </div>
+                            <div>
+                                <input type="email" placeholder="Email Address *" required class="w-full px-6 py-4 rounded-xl bg-white/10 border border-white/30 text-white placeholder-gray-300 focus:outline-none focus:border-brandOrange body-font">
+                            </div>
+                        </div>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <input type="tel" placeholder="Phone Number *" required class="w-full px-6 py-4 rounded-xl bg-white/10 border border-white/30 text-white placeholder-gray-300 focus:outline-none focus:border-brandOrange body-font">
+                            </div>
+                            <div>
+                                <select class="w-full px-6 py-4 rounded-xl bg-white/10 border border-white/30 text-white focus:outline-none focus:border-brandOrange body-font">
+                                    <option value="" disabled selected>Event Type *</option>
+                                    <option value="conference">Conference/Summit</option>
+                                    <option value="launch">Product/Service Launch</option>
+                                    <option value="exhibition">Exhibition/Trade Show</option>
+                                    <option value="corporate">Corporate Meeting</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <input type="text" placeholder="Estimated Number of Attendees" class="w-full px-6 py-4 rounded-xl bg-white/10 border border-white/30 text-white placeholder-gray-300 focus:outline-none focus:border-brandOrange body-font">
+                        </div>
+                        
+                        <div>
+                            <textarea rows="4" placeholder="Tell us about your event (objectives, dates, budget, etc.)" class="w-full px-6 py-4 rounded-xl bg-white/10 border border-white/30 text-white placeholder-gray-300 focus:outline-none focus:border-brandOrange body-font"></textarea>
+                        </div>
+                        
+                        <button type="submit" class="w-full py-4 bg-brandOrange text-white font-bold rounded-xl hover:bg-white hover:text-brandOrange transition-all duration-300 btn-hover button-font">
+                            <i class="fas fa-paper-plane mr-2"></i>Get Event Proposal
+                        </button>
+                    </form>
+                    
+                    <div class="mt-8 pt-8 border-t border-white/20">
+                        <p class="text-gray-300 body-font">
+                            <i class="fas fa-phone-alt text-brandOrange mr-2"></i>
+                            Prefer to speak with us? Call <span class="font-bold">+255 788 969 599</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-brandBlue text-white pt-16 pb-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+                <div>
+                    <img src="images/logo.png" alt="Infolink Logo" class="h-23 w-40 mb-6">
+                    <p class="text-gray-300 mb-6 body-font">Linking information and creating opportunities across East Africa through premium publishing, events, and business solutions.</p>
+                    <div class="flex space-x-4">
+                        <a href="https://facebook.com/infolinktz" target="_blank" class="text-gray-400 hover:text-brandOrange transition"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://instagram.com/infolink_tz" target="_blank" class="text-gray-400 hover:text-brandOrange transition"><i class="fab fa-instagram"></i></a>
+                        <a href="https://twitter.com/infolink_tz" target="_blank" class="text-gray-400 hover:text-brandOrange transition"><i class="fab fa-x-twitter"></i></a>
+                        <a href="https://linkedin.com/company/infolink-tz" target="_blank" class="text-gray-400 hover:text-brandOrange transition"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="header-font text-lg mb-6">Quick Links</h4>
+                    <ul class="space-y-3">
+                        <li><a href="home.html" class="text-gray-300 hover:text-brandOrange transition body-font">Home</a></li>
+                        <li><a href="About us.html" class="text-gray-300 hover:text-brandOrange transition body-font">About Us</a></li>
+                        <li><a href="team.html" class="text-gray-300 hover:text-brandOrange transition body-font">Our Team</a></li>
+                        <li><a href="service.html" class="text-gray-300 hover:text-brandOrange transition body-font">Services</a></li>
+                        <li><a href="flagship publication.html" class="text-gray-300 hover:text-brandOrange transition body-font">Publications</a></li>
+                        <li><a href="events.html" class="text-gray-300 hover:text-brandOrange transition body-font">Events</a></li>
+                        <li><a href="contact.html" class="text-gray-300 hover:text-brandOrange transition body-font">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="header-font text-lg mb-6">Event Services</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#conference" class="text-gray-300 hover:text-brandOrange transition body-font">Conferences & Summits</a></li>
+                        <li><a href="#launch" class="text-gray-300 hover:text-brandOrange transition body-font">Product Launches</a></li>
+                        <li><a href="#exhibition" class="text-gray-300 hover:text-brandOrange transition body-font">Exhibitions</a></li>
+                        <li><a href="#corporate" class="text-gray-300 hover:text-brandOrange transition body-font">Corporate Meetings</a></li>
+                        <li><a href="#workshops" class="text-gray-300 hover:text-brandOrange transition body-font">Workshops</a></li>
+                        <li><a href="#awards" class="text-gray-300 hover:text-brandOrange transition body-font">Award Ceremonies</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="header-font text-lg mb-6">Newsletter</h4>
+                    <p class="text-gray-300 mb-4 body-font">Subscribe for event industry insights and tips</p>
+                    <div class="flex">
+                        <input type="email" placeholder="Your email" class="flex-grow px-4 py-3 rounded-l-lg text-gray-800 focus:outline-none body-font">
+                        <button class="bg-brandOrange px-5 py-3 rounded-r-lg hover:bg-white hover:text-brandOrange transition">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </div>
+                    <p class="text-gray-400 text-sm mt-4 body-font">We respect your privacy. Unsubscribe anytime.</p>
+                </div>
+            </div>
+            
+            <div class="border-t border-white/20 pt-8 text-center">
+                <p class="text-gray-300 body-font">&copy; 2026 Infolink LTD. All Rights Reserved. | Linking Information. Creating Opportunities.</p>
+                <div class="mt-6">
+                    <a href="events.html" class="inline-flex items-center px-6 py-2 bg-brandOrange text-white font-bold rounded-lg hover:bg-white hover:text-brandOrange transition btn-hover button-font">
+                        <i class="fas fa-arrow-up mr-2"></i>Back to Top
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+        btn.addEventListener('click', () => menu.classList.toggle('hidden'));
+
+        // Form submission
+        document.querySelector('form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your event inquiry! Our team will contact you with a proposal within 24 hours.');
+            this.reset();
+        });
+
+        // Scroll Animation
+        function handleScroll() {
+            const elements = document.querySelectorAll('.scroll-element');
+            const windowHeight = window.innerHeight;
+            
+            elements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const elementVisible = 150;
+                
+                if (elementTop < windowHeight - elementVisible) {
+                    element.classList.add('visible');
+                }
+            });
+        }
+        
+        // Initial check
+        handleScroll();
+        window.addEventListener('scroll', handleScroll);
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    if (!menu.classList.contains('hidden')) {
+                        menu.classList.add('hidden');
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>

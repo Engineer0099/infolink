@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Infolink Tanzania</title>
+    <meta name="description" content="Get in touch with Infolink Tanzania for publishing, events, and business management solutions.">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Open+Sans:wght@300;400;600&family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brandBlue: '#0e2a5c',
+                        brandOrange: '#f58025',
+                        brandGray: '#f8fafc',
+                    },
+                    fontFamily: {
+                        'montserrat': ['Montserrat', 'sans-serif'],
+                        'poppins': ['Poppins', 'sans-serif'],
+                        'opensans': ['Open Sans', 'sans-serif'],
+                    },
+                    animation: {
+                        'fade-in': 'fadeIn 0.8s ease-out',
+                        'slide-up': 'slideUp 0.6s ease-out',
+                        'slide-in-right': 'slideInRight 0.7s ease-out',
+                        'float': 'float 3s ease-in-out infinite',
+                        'pulse-glow': 'pulseGlow 2s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' }
+                        },
+                        slideUp: {
+                            '0%': { transform: 'translateY(20px)', opacity: '0' },
+                            '100%': { transform: 'translateY(0)', opacity: '1' }
+                        },
+                        slideInRight: {
+                            '0%': { transform: 'translateX(20px)', opacity: '0' },
+                            '100%': { transform: 'translateX(0)', opacity: '1' }
+                        },
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-10px)' }
+                        },
+                        pulseGlow: {
+                            '0%, 100%': { boxShadow: '0 0 20px rgba(245, 128, 37, 0.3)' },
+                            '50%': { boxShadow: '0 0 30px rgba(245, 128, 37, 0.6)' }
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        html { scroll-behavior: smooth; }
+        
+        .btn-hover { 
+            transition: all 0.3s ease; 
+        }
+        .btn-hover:hover { 
+            transform: translateY(-3px); 
+            box-shadow: 0 15px 30px rgba(245, 128, 37, 0.3); 
+        }
+        
+        .img-hover { 
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1); 
+        }
+        .img-hover:hover { 
+            transform: scale(1.05); 
+        }
+        
+        .title-font { 
+            font-family: 'Montserrat', 'Poppins', sans-serif; 
+            font-weight: 700; 
+        }
+        
+        .header-font { 
+            font-family: 'Montserrat', sans-serif; 
+            font-weight: 600; 
+        }
+        
+        .body-font { 
+            font-family: 'Open Sans', sans-serif; 
+            font-weight: 400; 
+        }
+        
+        .button-font { 
+            font-family: 'Montserrat', 'Poppins', sans-serif; 
+            font-weight: 500; 
+        }
+        
+        .nav-link {
+            text-transform: uppercase;
+        }
+        
+        .gradient-text {
+            background: linear-gradient(45deg, #f58025, #ffb347, #f58025);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .border-glow {
+            border: 2px solid transparent;
+            background: linear-gradient(white, white) padding-box,
+                        linear-gradient(45deg, #f58025, #0e2a5c) border-box;
+        }
+        
+        .contact-item {
+            transition: all 0.4s ease;
+        }
+        
+        .contact-item:hover {
+            transform: translateX(10px);
+            background: linear-gradient(90deg, rgba(245, 128, 37, 0.1) 0%, rgba(14, 42, 92, 0.05) 100%);
+        }
+        
+        .form-input {
+            transition: all 0.3s ease;
+        }
+        
+        .form-input:focus {
+            transform: scale(1.02);
+            box-shadow: 0 10px 25px rgba(245, 128, 37, 0.15);
+        }
+        
+        .social-icon {
+            transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        }
+        
+        .social-icon:hover {
+            transform: translateY(-5px) rotate(5deg);
+        }
+    </style>
+</head>
+<body class="bg-white text-gray-800 antialiased">
+    <!-- WhatsApp Float -->
+    <a href="https://wa.me/255788969599" target="_blank" class="fixed bottom-6 right-6 z-50 bg-green-500 text-white w-14 h-14 rounded-full flex items-center justify-center hover:bg-green-600 transition-all duration-300 shadow-2xl animate-float">
+        <i class="fab fa-whatsapp text-2xl"></i>
+    </a>
+
+    <!-- Navigation Header -->
+    <nav class="fixed w-full z-40 bg-brandBlue/95 backdrop-blur-md shadow-lg transition-all duration-300 border-b border-brandBlue/20 animate-slide-up">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 md:h-20 items-center">
+                <a href="index.html" class="flex-shrink-0 flex items-center group">
+                    <img src="images/logo.png" alt="Infolink Logo" class="h-23 md:h-23 w-40 group-hover:opacity-90 transition img-hover">
+                </a>
+                
+                <div class="hidden lg:flex space-x-6 items-center text-sm font-semibold uppercase tracking-wide">
+                    <a href="home.html" class="text-white hover:text-brandOrange transition border-b-2 border-transparent hover:border-brandOrange pb-1 button-font nav-link">Home</a>
+                    <a href="About us.html" class="text-white hover:text-brandOrange transition border-b-2 border-transparent hover:border-brandOrange pb-1 button-font nav-link">About</a>
+                    <a href="team.html" class="text-white hover:text-brandOrange transition border-b-2 border-transparent hover:border-brandOrange pb-1 button-font nav-link">Team</a>
+                    <a href="service.html" class="text-white hover:text-brandOrange transition border-b-2 border-transparent hover:border-brandOrange pb-1 button-font nav-link">Services</a>
+                    <a href="flagship publication.html" class="text-white hover:text-brandOrange transition border-b-2 border-transparent hover:border-brandOrange pb-1 button-font nav-link">Publications</a>
+                    <a href="events.html" class="text-white hover:text-brandOrange transition border-b-2 border-transparent hover:border-brandOrange pb-1 button-font nav-link">Events</a>
+                    <a href="contact.html" class="ml-4 px-6 py-2.5 bg-brandOrange text-white rounded-full hover:bg-white hover:text-brandOrange transition-all duration-300 shadow-lg btn-hover button-font nav-link animate-pulse-glow">
+                        Contact Us <i class="fas fa-arrow-right ml-2 text-sm"></i>
+                    </a>
+                </div>
+
+                <div class="lg:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-white text-2xl focus:outline-none p-2">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <div id="mobile-menu" class="hidden lg:hidden bg-white/95 backdrop-blur-md border-t border-gray-100 shadow-xl animate-fade-in">
+            <div class="px-4 pt-2 pb-6 space-y-1">
+                <a href="home.html" class="block px-3 py-3 text-gray-600 hover:text-brandOrange hover:bg-gray-50 button-font uppercase transition-all duration-300">Home</a>
+                <a href="About us.html" class="block px-3 py-3 text-gray-600 hover:text-brandOrange hover:bg-gray-50 button-font uppercase transition-all duration-300">About Us</a>
+                <a href="team.html" class="block px-3 py-3 text-gray-600 hover:text-brandOrange hover:bg-gray-50 button-font uppercase transition-all duration-300">Our Team</a>
+                <a href="service.html" class="block px-3 py-3 text-gray-600 hover:text-brandOrange hover:bg-gray-50 button-font uppercase transition-all duration-300">Services</a>
+                <a href="flagship publication.html" class="block px-3 py-3 text-gray-600 hover:text-brandOrange hover:bg-gray-50 button-font uppercase transition-all duration-300">Publications</a>
+                <a href="events.html" class="block px-3 py-3 text-gray-600 hover:text-brandOrange hover:bg-gray-50 button-font uppercase transition-all duration-300">Events</a>
+                <a href="contact.html" class="block px-3 py-3 text-brandBlue font-bold border-l-4 border-brandOrange bg-brandOrange/5 button-font uppercase">Get In Touch</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content - Contact Section -->
+    <section class="pt-24 pb-16 lg:pt-32 lg:pb-20 bg-gradient-to-br from-white via-brandGray to-white animate-fade-in">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12 animate-slide-up" style="animation-delay: 0.1s">
+                 <h2 class="text-3xl md:text-4xl title-font text-brandBlue mb-4">Get In Touch Today</h2>
+                 <p class="text-gray-600 max-w-xl mx-auto text-base md:text-lg body-font">Ready to start your project? Contact us for a consultation and let's create something amazing together</p>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-10 bg-white rounded-2xl md:rounded-3xl shadow-xl overflow-hidden border-glow">
+                <div class="p-6 md:p-8 lg:p-10 bg-gradient-to-br from-brandBlue to-blue-900 text-white flex flex-col justify-between animate-slide-up" style="animation-delay: 0.2s">
+                    <div>
+                        <h3 class="text-2xl md:text-3xl title-font mb-6">Contact Information</h3>
+                        <p class="text-gray-300 mb-8 text-base body-font">For project inquiries, sponsorship, partnerships, or consultations, we are ready to collaborate</p>
+                        
+                        <div class="space-y-6">
+                            <div class="contact-item flex items-center gap-4 md:gap-6 p-4 md:p-5 bg-white/5 rounded-xl hover:bg-white/10 transition-all duration-300">
+                                <div class="w-12 h-12 rounded-full bg-brandOrange flex items-center justify-center flex-shrink-0">
+                                    <i class="fas fa-phone text-lg"></i>
+                                </div>
+                                <div>
+                                    <p class="text-xs text-gray-400 uppercase body-font">Phone</p>
+                                    <p class="header-font text-lg">+255 788 969 599</p>
+                                </div>
+                            </div>
+                            <div class="contact-item flex items-center gap-4 md:gap-6 p-4 md:p-5 bg-white/5 rounded-xl hover:bg-white/10 transition-all duration-300">
+                                <div class="w-12 h-12 rounded-full bg-brandOrange flex items-center justify-center flex-shrink-0">
+                                    <i class="fas fa-envelope text-lg"></i>
+                                </div>
+                                <div>
+                                    <p class="text-xs text-gray-400 uppercase body-font">Email</p>
+                                    <p class="header-font text-lg">service@infolink.co.tz</p>
+                                    <p class="text-sm text-gray-400 body-font">info@infolink.co.tz</p>
+                                </div>
+                            </div>
+                            <div class="contact-item flex items-center gap-4 md:gap-6 p-4 md:p-5 bg-white/5 rounded-xl hover:bg-white/10 transition-all duration-300">
+                                <div class="w-12 h-12 rounded-full bg-brandOrange flex items-center justify-center flex-shrink-0">
+                                    <i class="fas fa-map-marker-alt text-lg"></i>
+                                </div>
+                                <div>
+                                    <p class="text-xs text-gray-400 uppercase body-font">Location</p>
+                                    <p class="header-font text-lg">Dar es Salaam, Tanzania</p>
+                                    <p class="text-sm text-gray-400 body-font">East Africa</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-10">
+                        <h4 class="title-font text-xl md:text-2xl mb-5">Connect With Us</h4>
+                        <div class="flex flex-wrap gap-3 md:gap-4 mb-5">
+                            <a href="https://facebook.com/infolinktz" target="_blank" class="social-icon w-10 h-10 md:w-12 md:h-12 rounded-full bg-white/10 flex items-center justify-center hover:bg-brandOrange transition-all duration-300">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="https://instagram.com/infolink_tz" target="_blank" class="social-icon w-10 h-10 md:w-12 md:h-12 rounded-full bg-white/10 flex items-center justify-center hover:bg-brandOrange transition-all duration-300">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="https://twitter.com/infolink_tz" target="_blank" class="social-icon w-10 h-10 md:w-12 md:h-12 rounded-full bg-white/10 flex items-center justify-center hover:bg-brandOrange transition-all duration-300">
+                                <i class="fab fa-x-twitter"></i>
+                            </a>
+                            <a href="https://linkedin.com/company/infolink-tz" target="_blank" class="social-icon w-10 h-10 md:w-12 md:h-12 rounded-full bg-white/10 flex items-center justify-center hover:bg-brandOrange transition-all duration-300">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <a href="https://wa.me/255788969599" target="_blank" class="social-icon w-10 h-10 md:w-12 md:h-12 rounded-full bg-green-500 flex items-center justify-center hover:bg-green-600 transition-all duration-300">
+                                <i class="fab fa-whatsapp"></i>
+                            </a>
+                        </div>
+                        <p class="text-sm text-brandOrange header-font">@infolink_tz</p>
+                    </div>
+                </div>
+
+                <div class="p-6 md:p-8 lg:p-10 animate-slide-in-right">
+                    <h3 class="text-2xl md:text-3xl title-font text-brandBlue mb-6">Send Us a Message</h3>
+                    <p class="text-gray-600 mb-8 body-font">We typically respond within 24 hours</p>
+                    <form class="space-y-6">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-6">
+                            <div>
+                                <label class="block text-sm header-font text-gray-600 mb-2">Your Name *</label>
+                                <input type="text" required class="form-input w-full px-4 py-3 rounded-lg bg-gray-50 border border-gray-200 focus:border-brandOrange focus:outline-none focus:ring-2 focus:ring-brandOrange/20 transition body-font">
+                            </div>
+                            <div>
+                                <label class="block text-sm header-font text-gray-600 mb-2">Phone Number *</label>
+                                <input type="text" required class="form-input w-full px-4 py-3 rounded-lg bg-gray-50 border border-gray-200 focus:border-brandOrange focus:outline-none focus:ring-2 focus:ring-brandOrange/20 transition body-font">
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-sm header-font text-gray-600 mb-2">Email Address *</label>
+                            <input type="email" required class="form-input w-full px-4 py-3 rounded-lg bg-gray-50 border border-gray-200 focus:border-brandOrange focus:outline-none focus:ring-2 focus:ring-brandOrange/20 transition body-font">
+                        </div>
+                        <div>
+                            <label class="block text-sm header-font text-gray-600 mb-2">Service Interest</label>
+                            <select class="form-input w-full px-4 py-3 rounded-lg bg-gray-50 border border-gray-200 focus:border-brandOrange focus:outline-none focus:ring-2 focus:ring-brandOrange/20 transition body-font">
+                                <option>Select a service</option>
+                                <option>Publishing</option>
+                                <option>Marketing & Sales</option>
+                                <option>Event Management</option>
+                                <option>Business Management</option>
+                                <option>Platform Development</option>
+                                <option>Advertising in Publications</option>
+                                <option>Other</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-sm header-font text-gray-600 mb-2">Message *</label>
+                            <textarea rows="4" required class="form-input w-full px-4 py-3 rounded-lg bg-gray-50 border border-gray-200 focus:border-brandOrange focus:outline-none focus:ring-2 focus:ring-brandOrange/20 transition body-font"></textarea>
+                        </div>
+                        <button type="submit" class="w-full py-3.5 bg-brandOrange text-white header-font rounded-lg hover:bg-white hover:text-brandOrange border border-brandOrange transition-all duration-300 shadow-lg btn-hover button-font text-base md:text-lg">
+                            <i class="fas fa-paper-plane mr-2"></i>Send Message
+                        </button>
+                    </form>
+                    
+                    <div class="mt-8 p-4 md:p-5 bg-brandGray rounded-xl border-l-4 border-brandOrange animate-pulse-glow">
+                        <p class="text-gray-700 text-sm md:text-base body-font">
+                            <i class="fas fa-info-circle text-brandOrange text-lg mr-2"></i>
+                            <span class="header-font">Prefer to talk?</span> Call us at <span class="text-brandBlue header-font">+255 788 969 599</span> or WhatsApp us for immediate response
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-brandBlue text-white pt-12 pb-8 animate-fade-in" style="animation-delay: 0.3s">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-10">
+                <div>
+                    <img src="images/logo.png" alt="Infolink Logo" class="h-23 w-40 mb-4">
+                    <p class="text-gray-300 mb-5 text-sm body-font">Linking information and creating opportunities across East Africa through premium publishing, events, and business solutions.</p>
+                    <div class="flex space-x-3">
+                        <a href="https://facebook.com/infolinktz" target="_blank" class="text-gray-400 hover:text-brandOrange transition-all duration-300 hover:scale-110"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://instagram.com/infolink_tz" target="_blank" class="text-gray-400 hover:text-brandOrange transition-all duration-300 hover:scale-110"><i class="fab fa-instagram"></i></a>
+                        <a href="https://twitter.com/infolink_tz" target="_blank" class="text-gray-400 hover:text-brandOrange transition-all duration-300 hover:scale-110"><i class="fab fa-x-twitter"></i></a>
+                        <a href="https://linkedin.com/company/infolink-tz" target="_blank" class="text-gray-400 hover:text-brandOrange transition-all duration-300 hover:scale-110"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="header-font text-base mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="home.html" class="text-gray-300 hover:text-brandOrange transition-all duration-300 text-sm body-font hover:pl-2 block">Home</a></li>
+                        <li><a href="About us.html" class="text-gray-300 hover:text-brandOrange transition-all duration-300 text-sm body-font hover:pl-2 block">About Us</a></li>
+                        <li><a href="team.html" class="text-gray-300 hover:text-brandOrange transition-all duration-300 text-sm body-font hover:pl-2 block">Our Team</a></li>
+                        <li><a href="service.html" class="text-gray-300 hover:text-brandOrange transition-all duration-300 text-sm body-font hover:pl-2 block">Services</a></li>
+                        <li><a href="flagship publication.html" class="text-gray-300 hover:text-brandOrange transition-all duration-300 text-sm body-font hover:pl-2 block">Publications</a></li>
+                        <li><a href="events.html" class="text-gray-300 hover:text-brandOrange transition-all duration-300 text-sm body-font hover:pl-2 block">Events</a></li>
+                        <li><a href="contact.html" class="text-gray-300 hover:text-brandOrange transition-all duration-300 text-sm body-font hover:pl-2 block">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="header-font text-base mb-4">Publications</h4>
+                    <ul class="space-y-2">
+                        <li><a href="flagship publication.html" class="text-gray-300 hover:text-brandOrange transition-all duration-300 text-sm body-font hover:pl-2 block">NGO Beacon</a></li>
+                        <li><a href="flagship publication.html" class="text-gray-300 hover:text-brandOrange transition-all duration-300 text-sm body-font hover:pl-2 block">Kariakoo Directory</a></li>
+                        <li><a href="flagship publication.html" class="text-gray-300 hover:text-brandOrange transition-all duration-300 text-sm body-font hover:pl-2 block">IJUE GARI YAKO</a></li>
+                        <li><a href="flagship publication.html" class="text-gray-300 hover:text-brandOrange transition-all duration-300 text-sm body-font hover:pl-2 block">The Tanzanian Way</a></li>
+                        <li><a href="flagship publication.html" class="text-gray-300 hover:text-brandOrange transition-all duration-300 text-sm body-font hover:pl-2 block">Zanzibar's Finest</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="header-font text-base mb-4">Newsletter</h4>
+                    <p class="text-gray-300 mb-3 text-sm body-font">Subscribe for updates and industry insights</p>
+                    <div class="flex">
+                        <input type="email" placeholder="Your email" class="flex-grow px-3 py-2 rounded-l-lg text-gray-800 focus:outline-none text-sm body-font">
+                        <button class="bg-brandOrange px-4 py-2 rounded-r-lg hover:bg-white hover:text-brandOrange border border-brandOrange transition-all duration-300">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </div>
+                    <p class="text-gray-400 text-xs mt-3 body-font">We respect your privacy. Unsubscribe anytime.</p>
+                </div>
+            </div>
+            
+            <div class="border-t border-white/20 pt-6 text-center">
+                <p class="text-gray-300 text-sm body-font">&copy; 2026 Infolink LTD. All Rights Reserved. | Linking Information. Creating Opportunities.</p>
+                <div class="mt-5">
+                    <a href="contact.html" class="inline-flex items-center px-5 py-2 bg-brandOrange text-white font-bold rounded-lg hover:bg-white hover:text-brandOrange border border-brandOrange transition-all duration-300 btn-hover button-font text-sm">
+                        <i class="fas fa-arrow-up mr-2"></i>Back to Top
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+            menu.classList.toggle('animate-fade-in');
+        });
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!menu.classList.contains('hidden') && 
+                !menu.contains(e.target) && 
+                !btn.contains(e.target)) {
+                menu.classList.add('hidden');
+            }
+        });
+
+        // Form submission with animation
+        document.querySelector('form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Add submit animation
+            const submitBtn = this.querySelector('button[type="submit"]');
+            const originalText = submitBtn.innerHTML;
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i>Sending...';
+            submitBtn.disabled = true;
+            
+            // Simulate API call
+            setTimeout(() => {
+                // Success animation
+                submitBtn.classList.remove('bg-brandOrange');
+                submitBtn.classList.add('bg-green-500');
+                submitBtn.innerHTML = '<i class="fas fa-check mr-2"></i>Message Sent!';
+                
+                // Show success message
+                const successDiv = document.createElement('div');
+                successDiv.className = 'mt-6 p-4 bg-green-50 text-green-700 rounded-lg border border-green-200 animate-slide-up';
+                successDiv.innerHTML = `
+                    <div class="flex items-center">
+                        <i class="fas fa-check-circle text-green-500 text-xl mr-3"></i>
+                        <div>
+                            <p class="font-semibold">Message Sent Successfully!</p>
+                            <p class="text-sm">Thank you for contacting us. We will get back to you within 24 hours.</p>
+                        </div>
+                    </div>
+                `;
+                
+                this.parentNode.insertBefore(successDiv, this.nextSibling);
+                
+                // Reset form after 3 seconds
+                setTimeout(() => {
+                    this.reset();
+                    submitBtn.classList.remove('bg-green-500');
+                    submitBtn.classList.add('bg-brandOrange');
+                    submitBtn.innerHTML = originalText;
+                    submitBtn.disabled = false;
+                    
+                    // Remove success message after 5 seconds
+                    setTimeout(() => {
+                        if (successDiv.parentNode) {
+                            successDiv.style.opacity = '0';
+                            successDiv.style.transform = 'translateY(-10px)';
+                            setTimeout(() => {
+                                if (successDiv.parentNode) {
+                                    successDiv.parentNode.removeChild(successDiv);
+                                }
+                            }, 300);
+                        }
+                    }, 5000);
+                }, 3000);
+            }, 1500);
+        });
+
+        // Animate elements on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-slide-up');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        // Observe elements for animation
+        document.querySelectorAll('.contact-item, .form-input, .social-icon').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    if (!menu.classList.contains('hidden')) {
+                        menu.classList.add('hidden');
+                    }
+                }
+            });
+        });
+
+        // Add hover effect to form labels
+        document.querySelectorAll('form label').forEach(label => {
+            label.addEventListener('mouseenter', () => {
+                label.style.transform = 'translateX(5px)';
+                label.style.transition = 'transform 0.3s ease';
+            });
+            label.addEventListener('mouseleave', () => {
+                label.style.transform = 'translateX(0)';
+            });
+        });
+    </script>
+</body>
+</html>

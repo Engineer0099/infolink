@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infolink | Home</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400&family=Montserrat:wght@500;600;700;800&family=Open+Sans:wght@300;400;600&family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brandBlue: '#0e2a5c',
+                        brandOrange: '#f58025',
+                        brandWhite: '#ffffff',
+                    },
+                    fontFamily: {
+                        // 1. Titles / Cover Headings: Montserrat / Poppins (Bold/Extra Bold) [cite: 2, 4, 5]
+                        title: ['Poppins', 'sans-serif'], 
+                        // 2. Headers: Montserrat (Semi-Bold/Medium) [cite: 10, 11, 12]
+                        header: ['Montserrat', 'sans-serif'],
+                        // 3. Normal Text: Open Sans / Lato (Regular/Light) [cite: 17, 18, 19]
+                        body: ['Open Sans', 'sans-serif'], 
+                        // 4. Buttons: Montserrat / Poppins (Medium/Semi-Bold) [cite: 25, 26]
+                        btn: ['Montserrat', 'sans-serif'],
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        float: { 
+                            '0%, 100%': { transform: 'translateY(0) rotate(0deg)' },
+                            '50%': { transform: 'translateY(-20px) rotate(2deg)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        html { scroll-behavior: smooth; }
+        
+        /* 3D BOOK STYLES */
+        .perspective-container {
+            perspective: 1000px;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .book-3d {
+            width: 280px;
+            height: 390px;
+            position: relative;
+            transform-style: preserve-3d;
+            transform: rotateY(-30deg) rotateX(10deg);
+            transition: transform 0.5s ease;
+            box-shadow: 25px 25px 50px rgba(0,0,0,0.5);
+        }
+
+        .book-3d:hover {
+            transform: rotateY(-15deg) rotateX(5deg) translateY(-10px);
+        }
+
+        .book-cover {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 2px 4px 4px 2px;
+            transform: translateZ(25px);
+            overflow: hidden;
+            background-color: #0e2a5c;
+        }
+
+        /* Spine uses brand colors only */
+        .book-spine {
+            position: absolute;
+            width: 50px;
+            height: 100%;
+            background-color: #f58025; /* Brand Orange */
+            transform: rotateY(-90deg) translateZ(25px);
+            border-radius: 2px 0 0 2px;
+        }
+
+        .book-pages {
+            position: absolute;
+            width: 260px;
+            height: 370px;
+            background: #fff;
+            transform: rotateY(0deg) translateZ(10px) translateX(15px) translateY(10px);
+            box-shadow: inset 5px 0 10px rgba(0,0,0,0.1);
+        }
+
+        /* 3D HANDS STYLE - Modified for image */
+        .hands-container {
+            position: relative;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        .hand-image {
+            width: 200px;
+            height: auto;
+            filter: drop-shadow(0 20px 30px rgba(0,0,0,0.5));
+        }
+
+        /* Slide Transitions */
+        .slide-content {
+            transition: opacity 0.8s ease-in-out, transform 0.8s ease-in-out;
+            position: absolute;
+            width: 100%;
+            top: 0;
+            left: 0;
+            height: 100%;
+            display: flex;
+            flex-col: column;
+            justify-content: center;
+        }
+        
+        .slide-hidden {
+            opacity: 0;
+            transform: translateY(30px);
+            pointer-events: none;
+            z-index: 0;
+        }
+        
+        .slide-active {
+            opacity: 1;
+            transform: translateY(0);
+            z-index: 10;
+        }
+
+        /* Custom spacing to push content down */
+        .hero-spacer {
+            margin-top: 120px; /* Ensures header doesn't hide content */
+        }
+
+        /* Mobile Menu Animation */
+        .mobile-menu {
+            transition: all 0.3s ease-in-out;
+        }
+    </style>
+</head>
+<body class="bg-brandBlue">
+
+    <nav class="fixed w-full z-50 bg-brandBlue shadow-xl h-24 flex items-center">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+            <div class="flex justify-between items-center">
+                <a href="#" class="flex-shrink-0 flex items-center group">
+                    <img src="images/logo.png" class="h-23 w-40" style="filter: drop-shadow(0px 2px 4px rgba(0,0,0,0.2));">
+                </a>
+                
+                <div class="hidden lg:flex space-x-10 items-center">
+                    <a href="home.html" class="text-white hover:text-brandOrange font-btn font-semibold text-sm tracking-wide transition duration-300 uppercase">HOME</a>
+                    <a href="About us.html" class="text-white hover:text-brandOrange font-btn font-semibold text-sm tracking-wide transition duration-300 uppercase">ABOUT US</a>
+                    <a href="team.html" class="text-white hover:text-brandOrange font-btn font-semibold text-sm tracking-wide transition duration-300 uppercase">OUR TEAM</a>
+                    <a href="service.html" class="text-white hover:text-brandOrange font-btn font-semibold text-sm tracking-wide transition duration-300 uppercase">SERVICES</a>
+                    <a href="events.html" class="text-white hover:text-brandOrange font-btn font-semibold text-sm tracking-wide transition duration-300 uppercase">EVENTS</a>
+                    <a href="flagship publication.html" class="text-white hover:text-brandOrange font-btn font-semibold text-sm tracking-wide transition duration-300 uppercase">PUBLICATIONS</a>
+                    
+                    <a href="contact.html" class="px-8 py-3 bg-brandOrange text-white rounded-full hover:bg-white hover:text-brandOrange transition-all duration-300 shadow-md font-btn font-bold text-sm uppercase">
+                        GET IN TOUCH
+                    </a>
+                </div>
+
+                <div class="lg:hidden flex items-center">
+                    <button id="mobile-menu-button" class="text-white text-2xl focus:outline-none p-2 hover:text-brandOrange transition">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Mobile Menu (Hidden by default) -->
+            <div id="mobile-menu" class="mobile-menu lg:hidden hidden absolute top-24 left-0 w-full bg-brandBlue shadow-lg z-40">
+                <div class="flex flex-col items-center py-4">
+                    <a href="home.html" class="text-white hover:text-brandOrange font-btn font-semibold text-sm tracking-wide transition duration-300 py-3 uppercase">HOME</a>
+                    <a href="About us.html" class="text-white hover:text-brandOrange font-btn font-semibold text-sm tracking-wide transition duration-300 py-3 uppercase">ABOUT US</a>
+                    <a href="team.html" class="text-white hover:text-brandOrange font-btn font-semibold text-sm tracking-wide transition duration-300 py-3 uppercase">OUR TEAM</a>
+                    <a href="service.html" class="text-white hover:text-brandOrange font-btn font-semibold text-sm tracking-wide transition duration-300 py-3 uppercase">SERVICES</a>
+                    <a href="events.html" class="text-white hover:text-brandOrange font-btn font-semibold text-sm tracking-wide transition duration-300 py-3 uppercase">EVENTS</a>
+                    <a href="flagship publication.html" class="text-white hover:text-brandOrange font-btn font-semibold text-sm tracking-wide transition duration-300 py-3 uppercase">PUBLICATIONS</a>
+                    <a href="contact.html" class="mt-4 px-8 py-3 bg-brandOrange text-white rounded-full hover:bg-white hover:text-brandOrange transition-all duration-300 shadow-md font-btn font-bold text-sm uppercase">GET IN TOUCH</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <section id="home" class="relative min-h-screen bg-brandBlue flex flex-col justify-center overflow-hidden">
+        
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full hero-spacer mb-20">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                
+                <div class="relative h-[550px]">
+                    
+                    <div id="text-slide-1" class="slide-content slide-active flex flex-col justify-center">
+                        <h1 class="font-title font-bold text-5xl lg:text-7xl text-white leading-tight mb-8">
+                            LINKING INFORMATION. <br>
+                            <span class="text-brandOrange">Creating Opportunities.</span>
+                        </h1>
+                        <p class="font-body font-normal text-lg text-white/90 mb-10 max-w-xl leading-relaxed">
+                            We connect people, organizations, and opportunities across East Africa through premium publishing, professional events, and strategic business management.
+                        </p>
+                        <div class="flex flex-col sm:flex-row gap-5">
+                            <a href="contact.html" class="px-10 py-4 bg-brandOrange text-white font-btn font-semibold rounded shadow-lg hover:bg-white hover:text-brandOrange transition duration-300 text-center uppercase">
+                                Explore Our Service
+                            </a>
+                            <a href="contact.html" class=px-10 py-4 border-2 border-white text-white font-btn font-semibold rounded hover:bg-white hover:text-brandBlue transition duration-300 text-center uppercase">
+                                
+                            </a>
+                        </div>
+                    </div>
+
+                    <div id="text-slide-2" class="slide-content slide-hidden flex flex-col justify-center">
+                        <h2 class="font-header font-bold text-brandOrange text-xl tracking-wider uppercase mb-4">
+                            Automotive Edition
+                        </h2>
+                        <h1 class="font-title font-bold text-4xl lg:text-6xl text-white leading-tight mb-6 uppercase">
+                            ARE YOU IN <br>
+                            AUTOMOTIVE BUSINESS?
+                        </h1>
+                        <p class="font-body font-normal text-lg text-white/90 mb-8 max-w-xl leading-relaxed">
+                            Get listed in <strong class="text-white font-bold">IJUE GARI YAKO</strong> Tanzania auto directory and car ownership guide.
+                        </p>
+                        
+                        <div class="grid grid-cols-3 gap-6 mb-10 border-t border-white/20 pt-6">
+                            <div>
+                                <div class="text-3xl font-title font-bold text-brandOrange"><span class="count-up" data-target="1000">0</span>+</div>
+                                <div class="text-sm font-body text-white/80 mt-1">Car Owners</div>
+                            </div>
+                            <div>
+                                <div class="text-3xl font-title font-bold text-brandOrange"><span class="count-up" data-target="2000">0</span>+</div>
+                                <div class="text-sm font-body text-white/80 mt-1">Car Drivers</div>
+                            </div>
+                            <div>
+                                <div class="text-3xl font-title font-bold text-brandOrange"><span class="count-up" data-target="500">0</span>+</div>
+                                <div class="text-sm font-body text-white/80 mt-1">Auto Buyers</div>
+                            </div>
+                        </div>
+
+                        <div class="flex flex-col sm:flex-row gap-5">
+                            <a href="contact.html" class="px-10 py-4 bg-brandOrange text-white font-btn font-semibold rounded shadow-lg hover:bg-white hover:text-brandOrange transition duration-300 text-center uppercase">
+                                    Get Listed Now
+                            </a>
+                            <a href="contact.html" class=-10 py-4 border-2 border-white text-white font-btn font-semibold rounded hover:bg-white hover:text-brandBlue transition duration-300 text-center uppercase">
+                                
+                            </a>
+                        </div>
+                    </div>
+
+                    <div id="text-slide-3" class="slide-content slide-hidden flex flex-col justify-center">
+                        <h2 class="font-header font-bold text-brandOrange text-xl tracking-wider uppercase mb-4">
+                            Development Sector
+                        </h2>
+                        <h1 class="font-title font-bold text-4xl lg:text-6xl text-white leading-tight mb-6 uppercase">
+                            ARE YOU <br>
+                            NGO'S BEACON?
+                        </h1>
+                        <p class="font-body font-normal text-lg text-white/90 mb-8 max-w-xl leading-relaxed">
+                            Get listed in <strong class="text-white font-bold">NGO'S BEACON</strong>. Connect with donors and development partners.
+                        </p>
+
+                        <div class="grid grid-cols-3 gap-6 mb-10 border-t border-white/20 pt-6">
+                            <div>
+                                <div class="text-3xl font-title font-bold text-brandOrange"><span class="count-up" data-target="1000">0</span>+</div>
+                                <div class="text-sm font-body text-white/80 mt-1">NGOs Listed</div>
+                            </div>
+                            <div>
+                                <div class="text-3xl font-title font-bold text-brandOrange"><span class="count-up" data-target="50">0</span>+</div>
+                                <div class="text-sm font-body text-white/80 mt-1">Donors</div>
+                            </div>
+                            <div>
+                                <div class="text-3xl font-title font-bold text-brandOrange"><span class="count-up" data-target="25">0</span>+</div>
+                                <div class="text-sm font-body text-white/80 mt-1">Regions</div>
+                            </div>
+                        </div>
+
+                        <div class="flex flex-col sm:flex-row gap-5">
+                            <a href="contact.html" class="px-10 py-4 bg-brandOrange text-white font-btn font-semibold rounded shadow-lg hover:bg-white hover:text-brandOrange transition duration-300 text-center uppercase">
+                                Get Listed Now
+                            </a>
+                            <a href="contact.html" class=px-10 py-4 border-2 border-white text-white font-btn font-semibold rounded hover:bg-white hover:text-brandBlue transition duration-300 text-center uppercase">
+                                                            
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="hidden lg:block relative h-[800px]">
+                    <div class="perspective-container">
+                        
+                        <div id="visual-slide-1" class="absolute transition-all duration-1000 ease-in-out opacity-100 transform translate-y-0">
+                            <div class="hands-container">
+                                <!-- Replace YOUR_IMAGE_LINK_HERE with your actual hands image URL -->
+                                <img src="images/holding hands.png" alt="Human hands holding" class="hand-image">
+                            </div>
+                            <div class="text-center mt-8">
+                                <h3 class="text-white font-title font-bold text-2xl">Partnership & Growth</h3>
+                            </div>
+                        </div>
+
+                        <div id="visual-slide-2" class="absolute transition-all duration-1000 ease-in-out opacity-0 transform translate-y-20">
+                            <div class="book-3d animate-float">
+                                <div class="book-spine"></div>
+                                <div class="book-pages"></div>
+                                <div class="book-cover">
+                                    <img src="images/cover_page-0001.jpg" alt="IJUE GARI YAKO" class="w-full h-full object-cover">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="visual-slide-3" class="absolute transition-all duration-1000 ease-in-out opacity-0 transform translate-y-20">
+                            <div class="book-3d animate-float" style="animation-delay: 1s;">
+                                <div class="book-spine"></div>
+                                <div class="book-pages"></div>
+                                <div class="book-cover">
+                                    <img src="images/NGO DIRECTORY.png" alt="NGO BEACON" class="w-full h-full object-cover">
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Mobile Menu Toggle
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            
+            mobileMenuButton.addEventListener('click', function() {
+                mobileMenu.classList.toggle('hidden');
+                // Change icon
+                const icon = mobileMenuButton.querySelector('i');
+                if (mobileMenu.classList.contains('hidden')) {
+                    icon.classList.remove('fa-times');
+                    icon.classList.add('fa-bars');
+                } else {
+                    icon.classList.remove('fa-bars');
+                    icon.classList.add('fa-times');
+                }
+            });
+            
+            // Close mobile menu when clicking on a link
+            const mobileMenuLinks = mobileMenu.querySelectorAll('a');
+            mobileMenuLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    mobileMenu.classList.add('hidden');
+                    const icon = mobileMenuButton.querySelector('i');
+                    icon.classList.remove('fa-times');
+                    icon.classList.add('fa-bars');
+                });
+            });
+            
+            // Close mobile menu when clicking outside
+            document.addEventListener('click', function(event) {
+                if (!mobileMenu.contains(event.target) && !mobileMenuButton.contains(event.target)) {
+                    mobileMenu.classList.add('hidden');
+                    const icon = mobileMenuButton.querySelector('i');
+                    icon.classList.remove('fa-times');
+                    icon.classList.add('fa-bars');
+                }
+            });
+
+            // Slide functionality (existing)
+            const totalSlides = 3;
+            let currentSlide = 1;
+            const slideDuration = 6000; 
+
+            function animateNumbers(slideId) {
+                const container = document.getElementById(`text-slide-${slideId}`);
+                if (!container) return;
+                
+                const counters = container.querySelectorAll('.count-up');
+                
+                counters.forEach(counter => {
+                    const target = +counter.getAttribute('data-target');
+                    const duration = 2000; 
+                    const increment = target / (duration / 16); 
+                    
+                    let current = 0;
+                    counter.innerText = '0';
+                    
+                    const updateCount = () => {
+                        current += increment;
+                        if (current < target) {
+                            counter.innerText = Math.ceil(current);
+                            requestAnimationFrame(updateCount);
+                        } else {
+                            counter.innerText = target;
+                        }
+                    };
+                    setTimeout(updateCount, 500);
+                });
+            }
+
+            function changeSlide() {
+                let nextSlide = currentSlide + 1;
+                if (nextSlide > totalSlides) nextSlide = 1;
+
+                // Toggle Text
+                const currentText = document.getElementById(`text-slide-${currentSlide}`);
+                currentText.classList.remove('slide-active');
+                currentText.classList.add('slide-hidden');
+
+                const nextText = document.getElementById(`text-slide-${nextSlide}`);
+                nextText.classList.remove('slide-hidden');
+                void nextText.offsetWidth; // Force Reflow
+                nextText.classList.add('slide-active');
+
+                // Toggle Visuals (Desktop only)
+                const currentVisual = document.getElementById(`visual-slide-${currentSlide}`);
+                if (currentVisual) {
+                    currentVisual.classList.remove('opacity-100', 'translate-y-0');
+                    currentVisual.classList.add('opacity-0', 'translate-y-20');
+                }
+
+                const nextVisual = document.getElementById(`visual-slide-${nextSlide}`);
+                if (nextVisual) {
+                    setTimeout(() => {
+                        nextVisual.classList.remove('opacity-0', 'translate-y-20');
+                        nextVisual.classList.add('opacity-100', 'translate-y-0');
+                    }, 100);
+                }
+
+                animateNumbers(nextSlide);
+                currentSlide = nextSlide;
+            }
+
+            setInterval(changeSlide, slideDuration);
+        });
+    </script>
+</body>
+</html>

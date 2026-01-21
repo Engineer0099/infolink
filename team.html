@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Team | Infolink Tanzania</title>
+    <meta name="description" content="Meet the leadership team and s of Infolink Tanzania.">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Open+Sans:wght@300;400;600&family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brandBlue: '#0e2a5c',
+                        brandOrange: '#f58025',
+                        brandGray: '#f8fafc',
+                    },
+                    fontFamily: {
+                        'montserrat': ['Montserrat', 'sans-serif'],
+                        'poppins': ['Poppins', 'sans-serif'],
+                        'opensans': ['Open Sans', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        html { scroll-behavior: smooth; }
+        .btn-hover { transition: all 0.3s ease; }
+        .btn-hover:hover { transform: translateY(-3px); box-shadow: 0 15px 30px rgba(245, 128, 37, 0.3); }
+        .img-hover { transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1); }
+        .img-hover:hover { transform: scale(1.08); }
+        
+        /* Titles: Montserrat/Poppins Bold/Extra Bold */
+        .title-font { font-family: 'Montserrat', 'Poppins', sans-serif; font-weight: 800; }
+        
+        /* Headers: Montserrat Semi-Bold/Medium */
+        .header-font { font-family: 'Montserrat', sans-serif; font-weight: 600; }
+        
+        /* Body: Open Sans Regular/Light */
+        .body-font { font-family: 'Open Sans', sans-serif; font-weight: 400; }
+        
+        /* Buttons: Montserrat/Poppins Medium/Semi-Bold */
+        .button-font { font-family: 'Montserrat', 'Poppins', sans-serif; font-weight: 500; }
+        
+        /* Header Link Capitalization */
+        .nav-link {
+            text-transform: uppercase;
+        }
+        
+        .gradient-text {
+            background: linear-gradient(45deg, #f58025, #ffb347, #f58025);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        /* Partners background with fade effect */
+        .partners-background {
+            background: linear-gradient(rgba(255,255,255,0.8), rgba(255,255,255,0.8)),url('images/partner.png');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+        
+        /* Infinite Scroll Animation for Partners */
+        @keyframes scroll {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(calc(-250px * 10));
+            }
+        }
+        
+        .slider {
+            background: white;
+            height: 180px;
+            margin: auto;
+            overflow: hidden;
+            position: relative;
+            width: 100%;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .slider::before,
+        .slider::after {
+            background: linear-gradient(to right, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 100%);
+            content: "";
+            height: 180px;
+            position: absolute;
+            width: 200px;
+            z-index: 2;
+        }
+        
+        .slider::after {
+            right: 0;
+            top: 0;
+            transform: rotateZ(180deg);
+        }
+        
+        .slider::before {
+            left: 0;
+            top: 0;
+        }
+        
+        .slider-track {
+            animation: scroll 40s linear infinite;
+            display: flex;
+            width: calc(250px * 20);
+        }
+        
+        .slider-track:hover {
+            animation-play-state: paused;
+        }
+        
+        .partner-card {
+            width: 220px;
+            height: 140px;
+            margin: 0 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            border: 1px solid #e5e7eb;
+            border-radius: 12px;
+            background: white;
+            padding: 20px;
+        }
+        
+        .partner-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+            border-color: #f58025;
+        }
+        
+        .scroll-element {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.8s ease-out;
+        }
+        
+        .scroll-element.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .slider {
+                height: 140px;
+            }
+            
+            .partner-card {
+                width: 180px;
+                height: 120px;
+                margin: 0 10px;
+            }
+            
+            .slider::before,
+            .slider::after {
+                height: 140px;
+                width: 80px;
+            }
+            
+            @keyframes scroll {
+                0% {
+                    transform: translateX(0);
+                }
+                100% {
+                    transform: translateX(calc(-180px * 10));
+                }
+            }
+        }
+    </style>
+</head>
+<body class="bg-white text-gray-800 antialiased">
+    <!-- WhatsApp Float -->
+    <a href="https://wa.me/255788969599" target="_blank" class="fixed bottom-6 right-6 z-50 bg-green-500 text-white w-14 h-14 rounded-full flex items-center justify-center hover:bg-green-600 transition-all duration-300 shadow-2xl">
+        <i class="fab fa-whatsapp text-2xl"></i>
+    </a>
+
+    <!-- Navigation Header -->
+    <nav class="fixed w-full z-40 bg-brandBlue backdrop-blur-md shadow-lg transition-all duration-300 border-b border-brandBlue/20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <a href="home.html" class="flex-shrink-0 flex items-center group">
+                    <img src="images/logo.png" alt="Infolink Logo" class="h-23 w-40 group-hover:opacity-90 transition img-hover">
+                </a>
+                
+                <div class="hidden lg:flex space-x-8 items-center text-sm font-semibold uppercase tracking-wide">
+                    <a href="home.html" class="text-white hover:text-brandOrange transition border-b-2 border-transparent hover:border-brandOrange pb-1 button-font nav-link">Home</a>
+                    <a href="About us.html" class="text-white hover:text-brandOrange transition border-b-2 border-transparent hover:border-brandOrange pb-1 button-font nav-link">About Us</a>
+                    <a href="team.html" class="text-white hover:text-brandOrange transition border-b-2 border-transparent hover:border-brandOrange pb-1 button-font nav-link">Our Team</a>
+                    <a href="service.html" class="text-white hover:text-brandOrange transition border-b-2 border-transparent hover:border-brandOrange pb-1 button-font nav-link">Services</a>
+                    <a href="flagship publication.html" class="text-white hover:text-brandOrange transition border-b-2 border-transparent hover:border-brandOrange pb-1 button-font nav-link">Publications</a>
+                    <a href="events.html" class="text-white hover:text-brandOrange transition border-b-2 border-transparent hover:border-brandOrange pb-1 button-font nav-link">Events</a>
+                    <a href="contact.html" class="ml-4 px-8 py-3 bg-brandOrange text-white rounded-full hover:bg-white hover:text-brandOrange transition-all duration-300 shadow-lg btn-hover button-font nav-link">
+                        Get In Touch <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+
+                <div class="lg:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-white text-2xl focus:outline-none p-2">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <div id="mobile-menu" class="hidden lg:hidden bg-white border-t border-gray-100 shadow-xl">
+            <div class="px-4 pt-2 pb-6 space-y-1">
+                <a href="home.html" class="block px-3 py-3 text-gray-600 hover:text-brandOrange hover:bg-gray-50 button-font uppercase">Home</a>
+                <a href="About us.html" class="block px-3 py-3 text-gray-600 hover:text-brandOrange hover:bg-gray-50 button-font uppercase">About Us</a>
+                <a href="team.html" class="block px-3 py-3 text-brandBlue font-bold border-l-4 border-brandOrange bg-brandOrange/5 button-font uppercase">Our Team</a>
+                <a href="service.html" class="block px-3 py-3 text-gray-600 hover:text-brandOrange hover:bg-gray-50 button-font uppercase">Services</a>
+                <a href="flagship publication.html" class="block px-3 py-3 text-gray-600 hover:text-brandOrange hover:bg-gray-50 button-font uppercase">Publications</a>
+                <a href="events.html" class="block px-3 py-3 text-gray-600 hover:text-brandOrange hover:bg-gray-50 button-font uppercase">Events</a>
+                <a href="contact.html" class="block px-3 py-3 bg-brandOrange text-white font-bold rounded-lg mx-2 text-center button-font uppercase">Get In Touch</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content - Team Section -->
+    <section class="pt-32 pb-20 lg:pt-40 lg:pb-28 bg-gradient-to-br from-white via-brandGray to-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 scroll-element">
+                <div class="inline-block px-4 py-2 bg-brandOrange/10 rounded-full mb-4">
+                    <span class="text-brandOrange font-bold tracking-widest uppercase text-sm button-font">Leadership</span>
+                </div>
+                <h2 class="text-4xl title-font text-brandBlue mb-6">Meet Our Leadership Team</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto body-font">Experienced professionals driving innovation and excellence across East Africa</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
+                <!-- Team Member 1 -->
+                <div class="bg-white rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-500 p-6 text-center group scroll-element">
+                    <div class="w-40 h-40 mx-auto mb-6 rounded-full overflow-hidden bg-gradient-to-br from-brandBlue to-brandOrange p-1 shadow-lg">
+                        <div class="w-full h-full rounded-full bg-white p-1">
+                            <img src="images/abdil.png" alt="Abdil-ikhlas A. Rutungo" class="w-full h-full object-cover rounded-full">
+                        </div>
+                    </div>
+                    <h4 class="text-xl header-font text-brandBlue">Abdil-ikhlas A. Rutungo</h4>
+                    <span class="text-brandOrange font-bold uppercase block mb-4 text-sm button-font">Founder & Visionary</span>
+                    <p class="text-gray-600 leading-relaxed mb-6 body-font" style="font-size: 0.95rem; line-height: 1.6;">
+                        Drives company vision, innovation, and strategic partnerships across East Africa. Oversees long-term growth and market expansion.
+                    </p>
+                </div>
+
+                <!-- Team Member 2 -->
+                <div class="bg-white rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-500 p-6 text-center group scroll-element">
+                    <div class="w-40 h-40 mx-auto mb-6 rounded-full overflow-hidden bg-gradient-to-br from-brandOrange to-yellow-400 p-1 shadow-lg">
+                        <div class="w-full h-full rounded-full bg-white p-1">
+                            <img src="images/editor.png" alt="Praisegod K. Mhema" class="w-full h-full object-cover rounded-full">
+                        </div>
+                    </div>
+                    <h4 class="text-xl header-font text-brandBlue">Praisegod K. Mhema</h4>
+                    <span class="text-brandOrange font-bold uppercase block mb-4 text-sm button-font">Chief Editor</span>
+                    <p class="text-gray-600 leading-relaxed mb-6 body-font" style="font-size: 0.95rem; line-height: 1.6;">
+                        Guides content development, editorial standards, and publication quality across all platforms. Ensures excellence in every publication.
+                    </p>
+                </div>
+
+                <!-- Team Member 3 -->
+                <div class="bg-white rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-500 p-6 text-center group scroll-element">
+                    <div class="w-40 h-40 mx-auto mb-6 rounded-full overflow-hidden bg-gradient-to-br from-brandBlue to-blue-400 p-1 shadow-lg">
+                        <div class="w-full h-full rounded-full bg-white p-1">
+                            <img src="images/noah.png" alt="Noah Benard" class="w-full h-full object-cover rounded-full">
+                        </div>
+                    </div>
+                    <h4 class="text-xl header-font text-brandBlue">Noah Benard</h4>
+                    <span class="text-brandOrange font-bold uppercase block mb-4 text-sm button-font">Operations Manager</span>
+                    <p class="text-gray-600 leading-relaxed mb-6 body-font" style="font-size: 0.95rem; line-height: 1.6;">
+                        Leads coordination, project execution, and day-to-day operational performance. Ensures seamless delivery of all services.
+                    </p>
+                </div>
+
+                <!-- Team Member 4 -->
+                <div class="bg-white rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-500 p-6 text-center group scroll-element">
+                    <div class="w-40 h-40 mx-auto mb-6 rounded-full overflow-hidden bg-gradient-to-br from-purple-500 to-brandOrange p-1 shadow-lg">
+                        <div class="w-full h-full rounded-full bg-white p-1">
+                            <img src="images/lightness.png" alt="Lightness Fulgence" class="w-full h-full object-cover rounded-full">
+                        </div>
+                    </div>
+                    <h4 class="text-xl header-font text-brandBlue">Lightness Fulgence</h4>
+                    <span class="text-brandOrange font-bold uppercase block mb-4 text-sm button-font">Administrator</span>
+                    <p class="text-gray-600 leading-relaxed mb-6 body-font" style="font-size: 0.95rem; line-height: 1.6;">
+                        Oversees operations, administration, and ensures organizational efficiency. Manages internal processes and client relations.
+                    </p>
+                </div>
+
+                <!-- Team Member 5 -->
+                <div class="bg-white rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-500 p-6 text-center group scroll-element">
+                    <div class="w-40 h-40 mx-auto mb-6 rounded-full overflow-hidden bg-gradient-to-br from-green-500 to-brandBlue p-1 shadow-lg">
+                        <div class="w-full h-full rounded-full bg-white p-1">
+                            <img src="INSERT_LEADER_IMAGE_LINK_HERE" alt="Peace Marco Bisake" class="w-full h-full object-cover rounded-full">
+                        </div>
+                    </div>
+                    <h4 class="text-xl header-font text-brandBlue">Peace Marco Bisake</h4>
+                    <span class="text-brandOrange font-bold uppercase block mb-4 text-sm button-font">Strategic Consultant</span>
+                    <p class="text-gray-600 leading-relaxed mb-6 body-font" style="font-size: 0.95rem; line-height: 1.6;">
+                        Provides strategic insights, assessments, and advisory support for client projects. Drives business growth initiatives.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="text-center mt-20 scroll-element">
+                <div class="bg-brandBlue rounded-2xl p-10 border border-gray-200">
+                    <h3 class="text-3xl title-font text-brandBlue mb-4">Join Our Growing Team</h3>
+                    <p class="text-white font-bold mb-8 max-w-2xl mx-auto body-font">We're always looking for talented individuals passionate about making an impact</p>
+                    <a href="contact.html" class="inline-flex items-center px-10 py-4 bg-brandOrange text-white font-bold rounded-xl hover:bg-white hover:text-brandOrange border border-brandOrange transition-all duration-300 btn-hover button-font">
+                        <i class="fas fa-user-plus mr-3"></i>Explore Career Opportunities
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Partners Section with Fade Background -->
+    <section class="py-20 partners-background overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 mb-12 text-center">
+             <h3 class="text-brandBlue title-font text-3xl mb-4">Trusted By Industry Leaders</h3>
+             <p class="text-brandBlue font bold-600 max-w-2xl mx-auto body-font">We partner with leading organizations across Tanzania and East Africa</p>
+        </div>
+        
+        <!-- <div class="max-w-6xl mx-12 px-6"> -->
+           <!-- <div class="slider"> -->
+                <div class="slider-track">
+                    <!-- Partner 1 -->
+                    <div class="partner-card">
+                        <img src="images/logo1.png" alt="Partner 1" class="max-w-full max-h-full object-contain opacity-80 hover:opacity-100 transition">
+                    </div>
+                    <!-- Partner 2 -->
+                    <div class="partner-card">
+                        <img src="images/logo2.png" alt="Partner 2" class="max-w-full max-h-full object-contain opacity-80 hover:opacity-100 transition">
+                    </div>
+                    <!-- Partner 3 -->
+                    <div class="partner-card">
+                        <img src="images/logo 3.png" alt="Partner 3" class="max-w-full max-h-full object-contain opacity-80 hover:opacity-100 transition">
+                    </div>
+                    <!-- Partner 4 -->
+                    <div class="partner-card">
+                        <img src="images/logo4.png" alt="Partner 4" class="max-w-full max-h-full object-contain opacity-80 hover:opacity-100 transition">
+                    </div>
+                    <!-- Partner 5 -->
+                    <div class="partner-card">
+                        <img src="images/logo5.png" alt="Partner 5" class="max-w-full max-h-full object-contain opacity-80 hover:opacity-100 transition">
+                    </div>
+                    <!-- Partner 6 -->
+                    <div class="partner-card">
+                        <img src="images/logo6.png" alt="Partner 6" class="max-w-full max-h-full object-contain opacity-80 hover:opacity-100 transition">
+                    </div>
+                    <!-- Partner 7 -->
+                    <div class="partner-card">
+                        <img src="images/logo7.png" alt="Partner 7" class="max-w-full max-h-full object-contain opacity-80 hover:opacity-100 transition">
+                    </div>
+                    <!-- Partner 8 -->
+                    <div class="partner-card">
+                        <img src="images/logo8.png" alt="Partner 8" class="max-w-full max-h-full object-contain opacity-80 hover:opacity-100 transition">
+                    </div>
+                    
+                    
+                
+                    <!-- Partner 1 -->
+                    <div class="partner-card">
+                        <img src="images/logo1.png" alt="Partner 1" class="max-w-full max-h-full object-contain opacity-80 hover:opacity-100 transition">
+                    </div>
+                    <!-- Partner 2 -->
+                    <div class="partner-card">
+                        <img src="images/logo2.png" alt="Partner 2" class="max-w-full max-h-full object-contain opacity-80 hover:opacity-100 transition">
+                    </div>
+                    <!-- Partner 3 -->
+                    <div class="partner-card">
+                        <img src="images/logo 3.png" alt="Partner 3" class="max-w-full max-h-full object-contain opacity-80 hover:opacity-100 transition">
+                    </div>
+                    <!-- Partner 4 -->
+                    <div class="partner-card">
+                        <img src="images/logo4.png" alt="Partner 4" class="max-w-full max-h-full object-contain opacity-80 hover:opacity-100 transition">
+                    </div>
+                    <!-- Partner 5 -->
+                    <div class="partner-card">
+                        <img src="images/logo5.png" alt="Partner 5" class="max-w-full max-h-full object-contain opacity-80 hover:opacity-100 transition">
+                    </div>
+                    <!-- Partner 6 -->
+                    <div class="partner-card">
+                        <img src="images/logo6.png" alt="Partner 6" class="max-w-full max-h-full object-contain opacity-80 hover:opacity-100 transition">
+                    </div>
+                    <!-- Partner 7 -->
+                    <div class="partner-card">
+                        <img src="images/logo7.png" alt="Partner 7" class="max-w-full max-h-full object-contain opacity-80 hover:opacity-100 transition">
+                    </div>
+                    <!-- Partner 8 -->
+                    <div class="partner-card">
+                        <img src="images/logo8.png" alt="Partner 8" class="max-w-full max-h-full object-contain opacity-80 hover:opacity-100 transition">
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        
+        <div class="text-center mt-16 scroll-element">
+            
+                <p class="text-brandBlue font-bold mb-4 body-font">Interested in becoming a partner?</p>
+                <a href="contact.html" class="inline-flex items-center px-8 py-3 bg-brandOrange text-white font-bold rounded-xl hover:bg-white hover:text-brandOrange border border-brandOrange transition-all duration-300 btn-hover button-font">
+                    <i class="fas fa-handshake mr-2"></i>Become a Partner
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-brandBlue text-white pt-16 pb-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+                <div>
+                    <img src="images/logo.png" alt="Infolink Logo" class="h-23 w-40 mb-6">
+                    <p class="text-gray-300 mb-6 body-font">Linking information and creating opportunities across East Africa through premium publishing, events, and business solutions.</p>
+                    <div class="flex space-x-4">
+                        <a href="https://facebook.com/infolinktz" target="_blank" class="text-gray-400 hover:text-brandOrange transition"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/infolink_tz?igsh=MWp0NmljNW02eG1zMg%3D%3D&utm_source=qr" target="_blank" class="text-gray-400 hover:text-brandOrange transition"><i class="fab fa-instagram"></i></a>
+                        <a href="https://twitter.com/infolink_tz" target="_blank" class="text-gray-400 hover:text-brandOrange transition"><i class="fab fa-x-twitter"></i></a>
+                        <a href="https://www.linkedin.com/company/infolink-tz/?viewAsMember=true" target="_blank" class="text-gray-400 hover:text-brandOrange transition"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="header-font text-lg mb-6">Quick Links</h4>
+                    <ul class="space-y-3">
+                        <li><a href="home.html" class="text-gray-300 hover:text-brandOrange transition body-font">Home</a></li>
+                        <li><a href="About us.html" class="text-gray-300 hover:text-brandOrange transition body-font">About Us</a></li>
+                        <li><a href="team.html" class="text-gray-300 hover:text-brandOrange transition body-font">Our Team</a></li>
+                        <li><a href="service.html" class="text-gray-300 hover:text-brandOrange transition body-font">Services</a></li>
+                        <li><a href="flagship publication.html" class="text-gray-300 hover:text-brandOrange transition body-font">Publications</a></li>
+                        <li><a href="events.html" class="text-gray-300 hover:text-brandOrange transition body-font">Events</a></li>
+                        <li><a href="contact.html" class="text-gray-300 hover:text-brandOrange transition body-font">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="header-font text-lg mb-6">Publications</h4>
+                    <ul class="space-y-3">
+                        <li><a href="flagship publication.html" class="text-gray-300 hover:text-brandOrange transition body-font">NGO Beacon</a></li>
+                        <li><a href="flagship publication.html" class="text-gray-300 hover:text-brandOrange transition body-font">Kariakoo Directory</a></li>
+                        <li><a href="flagship publication.html" class="text-gray-300 hover:text-brandOrange transition body-font">IJUE GARI YAKO</a></li>
+                        <li><a href="flagship publication.html" class="text-gray-300 hover:text-brandOrange transition body-font">The Tanzanian Way</a></li>
+                        <li><a href="flagship publication.html" class="text-gray-300 hover:text-brandOrange transition body-font">Zanzibar's Finest</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="header-font text-lg mb-6">Newsletter</h4>
+                    <p class="text-gray-300 mb-4 body-font">Subscribe for updates and industry insights</p>
+                    <div class="flex">
+                        <input type="email" placeholder="Your email" class="flex-grow px-4 py-3 rounded-l-lg text-gray-800 focus:outline-none body-font">
+                        <button class="bg-brandOrange px-5 py-3 rounded-r-lg hover:bg-white hover:text-brandOrange border border-brandOrange transition">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </div>
+                    <p class="text-gray-400 text-sm mt-4 body-font">We respect your privacy. Unsubscribe anytime.</p>
+                </div>
+            </div>
+            
+            <div class="border-t border-white/20 pt-8 text-center">
+                <p class="text-gray-300 body-font">&copy; 2026 Infolink LTD. All Rights Reserved. | Linking Information. Creating Opportunities.</p>
+                <div class="mt-6">
+                    <a href="team.html" class="inline-flex items-center px-6 py-2 bg-brandOrange text-white font-bold rounded-lg hover:bg-white hover:text-brandOrange border border-brandOrange transition btn-hover button-font">
+                        <i class="fas fa-arrow-up mr-2"></i>Back to Top
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+        btn.addEventListener('click', () => menu.classList.toggle('hidden'));
+
+        // Scroll Animation
+        function handleScroll() {
+            const elements = document.querySelectorAll('.scroll-element');
+            const windowHeight = window.innerHeight;
+            
+            elements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const elementVisible = 150;
+                
+                if (elementTop < windowHeight - elementVisible) {
+                    element.classList.add('visible');
+                }
+            });
+        }
+        
+        // Initial check
+        handleScroll();
+        window.addEventListener('scroll', handleScroll);
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    if (!menu.classList.contains('hidden')) {
+                        menu.classList.add('hidden');
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
